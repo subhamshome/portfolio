@@ -86,14 +86,14 @@ const Timeline = () => {
     // timelinePointShape={null}
     >
       <div className="chrono-icons">
-        <img src={ubx} alt='UBx' className='timeline_icons'/>
-        <img src={uam} alt='UAM' className='timeline_icons'/>
-        <img src={isi} alt='ISI' className='timeline_icons'/>
-        <img src={ppcu} alt='PPCU' className='timeline_icons'/>
-        <img src={ipcv} alt='IPCV' className='timeline_icons'/>
-        <img src={tcs} alt='TCS' className='timeline_icons'/>
-        <img src={isi} alt='ISI' className='timeline_icons'/>
-        <img src={amity} alt='AMITY' className='timeline_icons'/>
+        <img src={ubx} alt='UBx' />
+        <img src={uam} alt='UAM' />
+        <img src={isi} alt='ISI' />
+        <img src={ppcu} alt='PPCU' />
+        <img src={ipcv} alt='IPCV' />
+        <img src={tcs} alt='TCS' />
+        <img src={isi} alt='ISI' />
+        <img src={amity} alt='AMITY' />
       </div>
     </Chrono>
   );
