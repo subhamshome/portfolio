@@ -1,0 +1,43 @@
+.academic-bar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.academic-bar a {
+    color: black;
+    margin: 0 10px; 
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.academic-bar a:hover {
+    transform:rotate(-15deg) scale(1.2);
+}
+
+.linkedin:hover {
+    color: #0e76a8;
+}
+
+.instagram:hover {
+    color: #d62976;
+}
+
+.kaggle {
+    font-size: 22px !important;
+}
+
+.kaggle:hover {
+    color: #0089Cf;
+}
+
+.orcid:hover {
+    color: #A6CE39;
+}
+
+.email:hover {
+    color: #EA4335;
+}

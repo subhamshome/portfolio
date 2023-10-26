@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Academic Portfolio Website Readme
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## by Subham Shome
 
-## Available Scripts
+Welcome to my personal academic portfolio website! This README will guide you through the structure, features, and how to set up and customize this website to showcase your academic achievements and accomplishments.
 
-In the project directory, you can run:
+Table of Contents:
 
-### `npm start`
+1. Introduction
+2. Getting Started
+3. Structure
+4. Deployment
+5. Contact
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 1. Introduction
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This academic portfolio website is designed to help you showcase your academic journey, research projects, publications, and personal achievements. It is a simple, yet elegant, website that allows you to present your accomplishments in an organized and visually appealing manner.
 
-### `npm test`
+## 2. Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To set up your own academic portfolio website, follow these steps:
 
-### `npm run build`
+1. **Fork** this repository: Start by forking this repository to create a copy in your own GitHub account.
+2. **Clone** the repository: Clone the forked repository to your local machine using Git: `git clone https://github.com/subhamshome/portfolio.git`
+3. Navigate to the project directory:`cd portfolio`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Customize the content: Update the content, such as your name, bio, academic history, research projects, by editing the HTML and Markdown files in the content directory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Configure the settings: Customize the website by modifying the settings in the config.js file, such as the site title, social media links, and color schemes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Preview your site: To see how your site looks locally, you can use a simple web server or a development tool like Live Server for Visual Studio Code.
 
-### `npm run eject`
+Test and make additional changes: Review your website locally and make further adjustments as necessary.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 3. Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The website's structure is organized as follows:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- public/index.html: The main page of your academic portfolio.
+- src/app.js: The main entry point for the project.
+- src/index.js: The main entry point for rendering the components.
+- src/components/: Contains all the `.jsx` and `.css` files for rendering and styling.
+- src/assets/: Houses all assets such as images and gifs.
+- README.md: This file that provides instructions and information about the project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 4. Deployment
 
-## Learn More
+This website is deployed with the help of Vercel.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 5. Contact
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you have any questions, need assistance, or want to contribute to this project, please don't hesitate to contact me.
 
-### Code Splitting
+Email: subham28297@gmail.com<br />
+GitHub: https://github.com/subhamshome<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you are using this website as a template, please mention this repository as the reference repo.
+Thank you for using this academic portfolio template. Best of luck with showcasing your academic journey and accomplishments!

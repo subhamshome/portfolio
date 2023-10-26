@@ -1,0 +1,22 @@
+.research-card {
+    background-color: #007fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    /* border-radius: 5px; */
+    transition: transform 0.2s;
+    max-height: 15px;
+    align-content: center;
+    justify-content: space-between;
+    text-align: center;
+    color: white
+}
+
+.research-card h4 {
+    margin: -2px 0 0 0;
+    padding: 0;
+}
+.research-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #EB9F42;
+}

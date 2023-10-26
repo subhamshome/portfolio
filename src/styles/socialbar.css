@@ -1,0 +1,31 @@
+.social-bar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.social-bar a {
+    color: black;
+    margin: 0 10px; 
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-bar a:hover {
+    transform:rotate(-15deg) scale(1.2);
+}
+
+.facebook:hover {
+    color: #3b5998;
+}
+
+.twitter:hover {
+    color: #1DA1F2;
+}
+
+.instagram:hover {
+    color: #d62976;
+}

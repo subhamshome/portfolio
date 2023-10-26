@@ -1,0 +1,43 @@
+.timeline-icons {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.chrono-icons {
+    size: 24px;
+}
+
+.bOPcbp.using-icon img {
+    max-height: 400% !important;
+    max-width: 400% !important;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.fhstIq.active {
+    background: none !important;
+    color: #EB9F42 !important;
+}
+
+.fhstIq {
+    color: #EB9F42 !important;
+}
+
+
+@media (max-width: 768px) {
+    .fhstIq.timeline-item-title.rc-title {
+        padding: 0;
+        min-width: 100px !important;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+    
+    .hIlYuq {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .jCGVMh.timeline-card-content.rc-card {
+        margin-left: 20px;
+    }
+}

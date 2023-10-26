@@ -1,0 +1,34 @@
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.view-buttons{
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.view-more-button {
+    background-color: #EB9F42; 
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+  
+.view-more-button:hover {
+    background-color: #007FFF; 
+    transform: scale(1.025);
+}
+
+@media (max-width: 768px) {
+    .project-cards {
+      grid-template-columns: 1fr;
+      text-align: center; 
+    }
+}
