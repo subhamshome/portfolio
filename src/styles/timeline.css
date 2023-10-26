@@ -9,18 +9,18 @@
     border-radius: 50%;
 }
 
-.fhstIq.active {
+.timeline-item-title.rc-title.active {
     background: none !important;
     color: #EB9F42 !important;
 }
 
-.fhstIq {
+.timeline-item-title.rc-title {
     color: #EB9F42 !important;
 }
 
 
 @media (max-width: 768px) {
-    .fhstIq.timeline-item-title.rc-title {
+    .timeline-item-title.rc-title {
         padding: 0;
         min-width: 100px !important;
         margin-right: 10px;
