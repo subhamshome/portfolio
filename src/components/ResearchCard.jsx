@@ -4,7 +4,7 @@ import '../styles/researchcard.css';
 const ResearchCard = ({ title }) => {
   return (
     <div className="research-card">
-      <h4>{title}</h4>
+      <div className='research-text'>{title}</div>
     </div>
   );
 };

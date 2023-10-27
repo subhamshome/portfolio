@@ -1,7 +1,7 @@
 .header {
   background: none;
   color: grey;
-  min-width: 100%;
+  width: 100vw;
   display: flex;
   z-index: 999;
   height: 80px;
@@ -110,10 +110,11 @@
   background-color: white !important;
   transition: background-color 0.3s ease;
   color: white;
-  min-width: 100%;
+  width: 100vw;
   height: 60px;
   position: fixed;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  width: 100vw;
 } 
 
 .mobile-menu {
@@ -128,14 +129,14 @@
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1080px) {
   .nav {
     display: none;
   }
 
   .mobile-menu-button {
     display: block;
-    margin-right: 2.5%;
+    margin-right: 5%;
     background: none;
     color: white;
     font-size: 24px;
@@ -145,7 +146,7 @@
 
   .scrolled-mobile-menu-button {
     display: block;
-    margin-right: 2.5%;
+    margin-right: 5%;
     background: none;
     color: black;
     font-size: 24px;
@@ -178,7 +179,5 @@
   .scrolled-a:hover {
     background-color: grey;
   }
-
-
 }
 

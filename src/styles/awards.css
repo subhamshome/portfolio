@@ -76,3 +76,11 @@
     font-size: 14px;
     color: grey;
 }
+
+@media (max-width: 1080px) {
+    .awards-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+}

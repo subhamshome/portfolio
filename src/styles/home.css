@@ -116,8 +116,7 @@
     margin-right: 10%;
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .intro-grid {
       grid-template-columns: 1fr;
       text-align: center; 

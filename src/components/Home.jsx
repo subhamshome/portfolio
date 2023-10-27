@@ -102,7 +102,7 @@ const Home = () => {
         </div>
 
         <div id='projects' className='sections-home'/>                            
-        <div>
+        <div style={{maxWidth: '100vw'}}>
                 <h1 className='home-headers'>Research Projects</h1>
                 <div className='projects-main'>
                         <Projects />

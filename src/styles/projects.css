@@ -26,7 +26,7 @@
     transform: scale(1.025);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .project-cards {
       grid-template-columns: 1fr;
       text-align: center; 

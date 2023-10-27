@@ -81,7 +81,7 @@ const Timeline = () => {
     // disableClickOnCircle={true} 
     allowDynamicUpdate={true}
     activeItemIndex={null}
-    titleDateFormat='MMMM YYYY'
+    titleDateFormat='MMM YYYY'
     scrollable
     // timelinePointShape={null}
     >
