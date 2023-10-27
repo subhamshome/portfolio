@@ -73,6 +73,10 @@
     padding: 5%;
 }
 
+.map-contact {
+    border: 2px solid black; 
+    margin: 5%;
+}
 
 @media (max-width: 1080px) {
     .contact-grid {
@@ -86,6 +90,7 @@
         flex-wrap: wrap;
         flex-direction: column;
         padding: 5%;
+        max-width: 80vw
     }
 
     .contact-item {
@@ -95,5 +100,10 @@
 
     .contact-item svg {
         margin-right: 0;
+    }
+
+    .map-contact {
+        max-width: 80vw;
+        max-height: auto;
     }
 }

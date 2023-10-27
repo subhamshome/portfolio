@@ -63,7 +63,7 @@ const Contact = () => {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1203.859302909952!2d-0.5977977917209456!3d44.8076819614409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5527da47d49b75%3A0x156b085bab276ab9!2sColl%C3%A8ge%20Sciences%20et%20Technologies%20-%20Universit%C3%A9%20de%20Bordeaux!5e0!3m2!1sen!2sfr!4v1698165473822!5m2!1sen!2sfr" 
                   width="600" 
                   height="450" 
-                  style={{border:'2px solid black', margin: '5%'}} 
+                  className="map-contact"
                   allowFullScreen="" 
                   loading="lazy" 
                   title="Google Maps UBx Science & Technology"
