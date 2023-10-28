@@ -48,3 +48,15 @@
     color: black;
     text-decoration: none;
 }
+
+@media (max-width: 1080px) {
+    .footer {
+        height: 20vh;
+    }
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+}

@@ -63,7 +63,7 @@ const entries = [
   },
   {
     cardTitle: "Undergraduate Journey Begins at Amity",
-    cardSubtitle: "Commenced my undergraduate studies in Electronics and Communication Engineering at Amity University, Kolkata",
+    cardSubtitle: "Commenced my undergraduate (B.Tech) studies in Electronics and Communication Engineering at Amity University, Kolkata",
     cardDetailedText: "Initially aspired to be an electronics engineer, working with integrated circuits (ICs)",
     date: "August 2015"
   }

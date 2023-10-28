@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/header.css'; 
 import resume from '../assets/Subham_Shome_CV.pdf';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
  const [scrolling, setScrolling] = useState(false);
@@ -91,37 +91,44 @@ const Header = () => {
         </Link>
       </nav>
 
-      <button className={`mobile-menu-button ${scrolling ? 'scrolled-mobile-menu-button' : ''}`} onClick={toggleMobileMenu}>
+      <button className={`mobile-menu-button ${scrolling ? 'scrolled-mobile-menu-button' : ''} 
+        ${isMobileMenuOpen ? 'menu-button-open' : ''}`} onClick={toggleMobileMenu}>
         <FontAwesomeIcon icon={faBars} />
       </button>
-      <nav className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`} style={{ listStyleType: 'none' }}>
-          <a href="#about" className="scrolled-a" onClick={handleScrollToSection('about')}>
-            About
-          </a>
-          <a href="#skills" className="scrolled-a" onClick={handleScrollToSection('skills')}>
-            Skills
-          </a>
-          <a href="#timeline" className="scrolled-a" onClick={handleScrollToSection('timeline')}>
-            Timeline
-          </a>
-          <a href="#projects" className="scrolled-a" onClick={handleScrollToSection('projects')}>
-            Projects
-          </a>
-          <a href="#awards" className="scrolled-a" onClick={handleScrollToSection('awards')}>
-            Awards
-          </a>
-          <a href="#contact" className="scrolled-a" onClick={handleScrollToSection('contact')}>
-            Contact
-          </a>
-          <Link to={blog} target="_blank" className="scrolled-a">
-            Blog
-          </Link>
-          <br />
-          <Link to={resume} target="_blank" className="header-button-scrolled">
-            Resume
-          </Link>
-        
-      </nav>
+      <button className={`mobile-menu-close-button ${scrolling ? 'scrolled-mobile-menu-close-button' : ''} 
+        ${isMobileMenuOpen ? 'close-button-open' : ''}`} onClick={toggleMobileMenu}>
+        <FontAwesomeIcon icon={faClose} />
+      </button>
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <nav className='mobile-menu-nav'>
+            <a href="#about" className="scrolled-a" onClick={handleScrollToSection('about')}>
+              About
+            </a>
+            <a href="#skills" className="scrolled-a" onClick={handleScrollToSection('skills')}>
+              Skills
+            </a>
+            <a href="#timeline" className="scrolled-a" onClick={handleScrollToSection('timeline')}>
+              Timeline
+            </a>
+            <a href="#projects" className="scrolled-a" onClick={handleScrollToSection('projects')}>
+              Projects
+            </a>
+            <a href="#awards" className="scrolled-a" onClick={handleScrollToSection('awards')}>
+              Awards
+            </a>
+            <a href="#contact" className="scrolled-a" onClick={handleScrollToSection('contact')}>
+              Contact
+            </a>
+            <Link to={blog} target="_blank" className="scrolled-a">
+              Blog
+            </Link>
+            <br />
+            <Link to={resume} target="_blank" className="header-button-scrolled">
+              Resume
+            </Link>
+        </nav>
+      </div>
+      
 
     </header>
  );
