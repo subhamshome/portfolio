@@ -47,7 +47,7 @@
     grid-template-columns: repeat(5, 1fr); 
     justify-items: center; 
     gap: 25px; 
-    width: 100vw;
+    width: 95vw;
 }
   
 .icon-item {
