@@ -7,6 +7,7 @@ import tcs from '../assets/timeline/tcs_logo.jpg';
 import ppcu from '../assets/timeline/ppcu_logo.png';
 import uam from '../assets/timeline/uam_logo.jpg';
 import ubx from '../assets/timeline/ubx_logo.png';
+import ims from '../assets/timeline/ims_logo.png';
 import '../styles/timeline.css';
 
 
@@ -19,6 +20,12 @@ import '../styles/timeline.css';
 // const ubx = 'https://drive.google.com/uc?export=view&id=1JJUt8H1itbVm_v_box83CzmzNYBY6pg7';
 
 const entries = [
+  {
+    cardTitle: "Master of Science Part 4 at IMS Bordeaux",
+    cardSubtitle: "Commenced my master thesis at the IMS Laboratory in Bordeaux, France",
+    cardDetailedText: "Working on parameter tuning in tomography to develop an optimized and guaranteed algorithm",
+    date: "January 2024"
+  },
   {
     cardTitle: "Master of Science Part 3 at UBx",
     cardSubtitle: "Commenced my third semester of the Master's program at the University of Bordeaux, France",
@@ -86,6 +93,7 @@ const Timeline = () => {
     // timelinePointShape={null}
     >
       <div className="chrono-icons">
+        <img src={ims} alt='IMS' />
         <img src={ubx} alt='UBx' />
         <img src={uam} alt='UAM' />
         <img src={isi} alt='ISI' />
