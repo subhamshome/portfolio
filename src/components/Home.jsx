@@ -76,10 +76,10 @@ const Home = () => {
                 <ResearchCard title="Computer Vision" />
                 <ResearchCard title="Applied Mathematics" />
                 <ResearchCard title="Tomographic Imaging" />
+                <ResearchCard title="Astroinformatics" />
+                <ResearchCard title="Deep Learning" />
                 <ResearchCard title="Numerical Analysis" />
                 <ResearchCard title="Image Reconstruction" />
-                <ResearchCard title="Astroinformatics" />
-                <ResearchCard title="Optimization" />
                 </div>
         </div>
 
