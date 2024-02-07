@@ -1,17 +1,15 @@
 import React from 'react';
 import '../styles/contact.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faMedium, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
 
-   const phone = [<p>+33 605908479</p>];
-
    const address = [<p>351 Cr de la Libération, 33400 Talence, France</p>];
    
-   const email = [<a href="mailto:subham28297@gmail.com" target="_blank" rel="noopener noreferrer" className="contact-links">
-      <p>subham28297@gmail.com</p>
+   const email = [<a href="mailto:subham.shome@etu.u-bordeaux.fr" target="_blank" rel="noopener noreferrer" className="contact-links">
+      <p>subham.shome@etu.u-bordeaux.fr</p>
    </a>];
    
    const blog = [<a href="https://subhamshome.medium.com" target="_blank" rel="noopener noreferrer" className="contact-links">
@@ -37,9 +35,6 @@ const Contact = () => {
                   <div>
                      <div className='contact-item'>
                         <FontAwesomeIcon icon={faLocationDot} />{address}
-                     </div>
-                     <div className='contact-item'>
-                        <FontAwesomeIcon icon={faPhone} />{phone}
                      </div>
                      <div className='contact-item'>
                         <FontAwesomeIcon icon={faEnvelope} />{email}

@@ -12,7 +12,7 @@ import '../styles/academicbar.css';
 const AcademicBar = () => {
   return (
     <div className="academic-bar">
-      <a href="mailto:subham28297@gmail.com" target="_blank" rel="noopener noreferrer" className='email'>
+      <a href="mailto:subham.shome@etu.u-bordeaux.fr" target="_blank" rel="noopener noreferrer" className='email'>
         <FontAwesomeIcon icon={faEnvelope} />
       </a>
       <a href="https://linkedin.com/in/subhamshome" target="_blank" rel="noopener noreferrer" className='linkedin'>

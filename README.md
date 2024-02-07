@@ -1,5 +1,7 @@
 # Academic Portfolio Website Readme
+
 [Live Demo](https://portfolio-subham-shomes-projects.vercel.app/)
+
 ## by Subham Shome
 
 Welcome to my personal academic portfolio website! This README will guide you through the structure, features, and how to set up and customize this website to showcase your academic achievements and accomplishments.
@@ -51,7 +53,7 @@ This website is deployed with the help of Vercel.
 
 If you have any questions, need assistance, or want to contribute to this project, please don't hesitate to contact me.
 
-Email: subham28297@gmail.com<br />
+Email: subham.shome@etu.u-bordeaux.fr<br />
 GitHub: https://github.com/subhamshome<br />
 
 If you are using this website as a template, please mention this repository as the reference repo.

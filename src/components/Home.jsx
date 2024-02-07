@@ -24,9 +24,10 @@ const Home = () => {
 
         const introText = [
                 <p style={{marginLeft: '10%', marginRight: 0}}>
-                        I am currently a second-year Triple-Masters student in Image Processing and Computer Vision (IPCV MSc) at 
+                        I am currently a second-year Triple-Masters student in Image Processing and Computer Vision (<b>IPCV MSc</b>) at 
                         universities in Hungary, Spain, and France, and I am fortunate to be studying with a 100% IPCV Excellence 
-                        Scholarship. My academic journey began with the completion of my Bachelor of Technology degree from Amity 
+                        Scholarship. I am in my last semester now and interning at <b>IMS Bordeaux</b> on the topic "<i>Parameter Learning in 
+                        Tomography</i>". My academic journey began with the completion of my Bachelor of Technology degree from Amity 
                         University in Kolkata, India, in 2019, where I was honored to be recognized as the Silver Medalist in 
                         Electronics and Communication Engineering. My undergraduate thesis revolved around a medical imaging project 
                         in the realms of image processing and deep learning, and I am proud to have received "extraordinary" remarks 
