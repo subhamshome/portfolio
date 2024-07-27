@@ -4,6 +4,7 @@ import '../styles/projects.css';
 
 import deepfake from '../assets/projects/deepfake.png';
 import hubble from '../assets/projects/hubble.png';
+import masters from '../assets/projects/masters.png';
 import murmur from '../assets/projects/murmur.png';
 import mwd from '../assets/projects/mwd.png';
 import opticdisc1 from '../assets/projects/opticdisc1.png';
@@ -14,6 +15,13 @@ import signature from '../assets/projects/signature.png';
 
 const Projects = () => {
     const projectsData = [
+        {
+        title: "Parameter Learning in Tomography",
+        description: "This is my masters thesis project on tomographic imaging and parameter learning using the famous Shepp-Logan phantom.",
+        image: masters,
+        buttonLabel: "GitHub",
+        buttonLink: "https://github.com/subhamshome/ipcv-masters-thesis"
+        },
         {
         title: "Optic disc segmentation in Drishti-GS dataset",
         description: "This project deals with the segmentation of optic disc from retinal fundus images from the famous Drishti-GS dataset",

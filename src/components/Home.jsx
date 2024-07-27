@@ -13,7 +13,7 @@ const Home = () => {
 
         const heroText = [
                 <div>
-                        Image Processing and Computer Vision (M.S.) Student &nbsp;|&nbsp; Ex-TCS
+                        Image Processing and Computer Vision (M.S.) Graduate &nbsp;|&nbsp; Ex-TCS
                         <div className='academic-hero'>
                                 <AcademicBar className='academic-hero' />
                         </div>                        
@@ -24,28 +24,27 @@ const Home = () => {
 
         const introText = [
                 <p style={{marginLeft: '10%', marginRight: 0}}>
-                        I am currently a second-year Triple-Masters student in Image Processing and Computer Vision (<b>IPCV MSc</b>) at 
-                        universities in Hungary, Spain, and France, and I am fortunate to be studying with a 100% IPCV Excellence 
-                        Scholarship. I am in my last semester now and interning at <b>IMS Bordeaux</b> on the topic "<i>Parameter Learning in 
-                        Tomography</i>". My academic journey began with the completion of my Bachelor of Technology degree from Amity 
-                        University in Kolkata, India, in 2019, where I was honored to be recognized as the Silver Medalist in 
-                        Electronics and Communication Engineering. My undergraduate thesis revolved around a medical imaging project 
-                        in the realms of image processing and deep learning, and I am proud to have received "extraordinary" remarks 
-                        for my contributions. This project served as an extension of the work I undertook during my Bachelor's 
-                        Summer Internship at the prestigious Indian Statistical Institute.
+                        I recently completed my Triple-Masters degree in Image Processing and Computer Vision (<b>IPCV MSc</b>) at universities 
+                        in Hungary, Spain, and France, graduating with a 4.51/5 GPA and placing second in my batch. I was fortunate to study 
+                        with a 100% IPCV Excellence Scholarship. During my final semester, I interned at <b>IMS Bordeaux</b>, working on 
+                        "<i>Parameter Learning in Tomography.</i>"
                         <br /><br />
-                        I've been recognized for my work with a number of awards and honors, including sponsorship of the Synapse AI 
-                        Symposium, winning the Cybathlon 2024 Vision Assistance Challenge and receiving the Erasmus+ Grant.
+                        My academic journey began with a Bachelor of Technology degree from Amity University in Kolkata, India, in 2019, where 
+                        I was honored as the Silver Medalist in Electronics and Communication Engineering. My undergraduate thesis focused on 
+                        a medical imaging project in the realms of image processing and deep learning, earning "<i>extraordinary</i>" remarks. This 
+                        project built upon work I undertook during a summer internship at the prestigious Indian Statistical Institute.
                         <br /><br />
-                        Prior to embarking on my current academic journey, I spent three years working as a Software Developer at TCS, 
-                        from June 2019 to August 2022. During my tenure, I primarily specialized in frontend development, with React JS 
-                        as my primary focus. Additionally, I occasionally delved into the management of SQL databases and some .NET 
-                        backend with C#.
+                        I have been recognized for my work with numerous awards and honors, including sponsorship of the Synapse AI Symposium, 
+                        winning the Cybathlon 2024 Vision Assistance Challenge, and receiving the Erasmus+ Grant.
                         <br /><br />
-                        My academic and professional experiences have shaped my deep passion for applied mathematics, particularly 
-                        within the domains of Image Processing and Computer Vision. I find immense satisfaction in working with 
-                        complex mathematical algorithms and numerical data. Furthermore, I possess a profound interest in Astronomy 
-                        and Cosmology, which continues to inspire my intellectual pursuits.
+                        Before embarking on my current academic journey, I worked for three years as a Software Developer at TCS, from June 
+                        2019 to August 2022. During my tenure, I primarily specialized in frontend development with React JS, and occasionally 
+                        delved into managing SQL databases and some .NET backend development with C#.
+                        <br /><br />
+                        My academic and professional experiences have fueled my deep passion for applied mathematics, particularly within the 
+                        domains of Image Processing and Computer Vision. I find immense satisfaction in working with complex mathematical 
+                        algorithms and numerical data. Additionally, I have a profound interest in Astronomy and Cosmology, which continues 
+                        to inspire my intellectual pursuits.
                 </p>
         ];
 
@@ -73,13 +72,13 @@ const Home = () => {
                 <h3>Research Interests</h3>
                 <div className='research-card-section'>
                 <ResearchCard title="Image Processing" />
-                <ResearchCard title="Computer Vision" />
+                <ResearchCard title="Radio Astronomy" />
+                <ResearchCard title="Image Reconstruction" />
+                <ResearchCard title="Astroinformatics" />
                 <ResearchCard title="Applied Mathematics" />
                 <ResearchCard title="Tomographic Imaging" />
-                <ResearchCard title="Astroinformatics" />
                 <ResearchCard title="Deep Learning" />
                 <ResearchCard title="Numerical Analysis" />
-                <ResearchCard title="Image Reconstruction" />
                 </div>
         </div>
 

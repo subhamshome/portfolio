@@ -14,7 +14,7 @@ const Footer = () => {
           <AcademicBar />
         </div>
         <div className="footer-column">
-          <p><span style={{color: 'grey', fontSize: '12px'}}>Last updated: January, 2024</span></p>
+          <p><span style={{color: 'grey', fontSize: '12px'}}>Last updated: July, 2024</span></p>
         </div>
       </div>
     </footer>
