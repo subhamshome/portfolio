@@ -71,14 +71,14 @@ const Home = () => {
                 </div>
                 <h3>Research Interests</h3>
                 <div className='research-card-section'>
-                <ResearchCard title="Image Processing" />
-                <ResearchCard title="Radio Astronomy" />
                 <ResearchCard title="Image Reconstruction" />
+                <ResearchCard title="Radio Astronomy" />
+                <ResearchCard title="Inverse Problems" />
                 <ResearchCard title="Astroinformatics" />
                 <ResearchCard title="Applied Mathematics" />
                 <ResearchCard title="Tomographic Imaging" />
                 <ResearchCard title="Deep Learning" />
-                <ResearchCard title="Numerical Analysis" />
+                <ResearchCard title="Computer Vision" />
                 </div>
         </div>
 

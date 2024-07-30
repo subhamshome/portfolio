@@ -6,10 +6,10 @@ import { faFacebook, faInstagram, faMedium, faLinkedin } from '@fortawesome/free
 
 const Contact = () => {
 
-   const address = [<p>351 Cr de la Libération, 33400 Talence, France</p>];
+   const address = [<p>Kolkata, West Bengal, India</p>];
    
-   const email = [<a href="mailto:subham.shome@etu.u-bordeaux.fr" target="_blank" rel="noopener noreferrer" className="contact-links">
-      <p>subham.shome@etu.u-bordeaux.fr</p>
+   const email = [<a href="mailto:subham28297@gmail.com" target="_blank" rel="noopener noreferrer" className="contact-links">
+      <p>subham28297@gmail.com</p>
    </a>];
    
    const blog = [<a href="https://subhamshome.medium.com" target="_blank" rel="noopener noreferrer" className="contact-links">
@@ -55,21 +55,17 @@ const Contact = () => {
                </div>
                <div className='contact-grid-2'>
                   <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1203.859302909952!2d-0.5977977917209456!3d44.8076819614409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5527da47d49b75%3A0x156b085bab276ab9!2sColl%C3%A8ge%20Sciences%20et%20Technologies%20-%20Universit%C3%A9%20de%20Bordeaux!5e0!3m2!1sen!2sfr!4v1698165473822!5m2!1sen!2sfr" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117925.35231277325!2d88.26495090163961!3d22.53540637448262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1722307542884!5m2!1sen!2sin" 
                   width="600" 
                   height="450" 
                   className="map-contact"
                   allowFullScreen="" 
                   loading="lazy" 
-                  title="Google Maps UBx Science & Technology"
+                  title="Google Maps Kolkata"
                   referrerPolicy="no-referrer-when-downgrade">
                   </iframe>
-                  
                </div>
-               
-
             </div>
-
      </div>
    )
 };
