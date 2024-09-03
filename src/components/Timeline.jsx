@@ -8,6 +8,7 @@ import ppcu from '../assets/timeline/ppcu_logo.png';
 import uam from '../assets/timeline/uam_logo.jpg';
 import ubx from '../assets/timeline/ubx_logo.png';
 import ims from '../assets/timeline/ims_logo.png';
+import hwu from '../assets/timeline/hwu_logo.jpg';
 import '../styles/timeline.css';
 
 
@@ -21,9 +22,15 @@ import '../styles/timeline.css';
 
 const entries = [
   {
+    cardTitle: "Doctor of Philosophy (PhD) at HWU",
+    cardSubtitle: "Started my research journey at BASP lab in Heriot-Watt University, UK",
+    cardDetailedText: "Working on physically guided deep radio-interferometric image reconstruction with deep learning",
+    date: "September 2024"
+  },
+  {
     cardTitle: "Master of Science Part 4 at IMS Bordeaux",
     cardSubtitle: "Commenced my master thesis at the IMS Laboratory in Bordeaux, France",
-    cardDetailedText: "Working on parameter tuning in tomography to develop an optimized and guaranteed algorithm",
+    cardDetailedText: "Worked on parameter tuning in tomography to develop an optimized and guaranteed algorithm",
     date: "January 2024"
   },
   {
@@ -93,6 +100,7 @@ const Timeline = () => {
     // timelinePointShape={null}
     >
       <div className="chrono-icons">
+        <img src={hwu} alt='HWU' />
         <img src={ims} alt='IMS' />
         <img src={ubx} alt='UBx' />
         <img src={uam} alt='UAM' />

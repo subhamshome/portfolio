@@ -9,6 +9,17 @@ const Awards = () => {
         <div className='awards-text'>
             <div>
                <div className='awards-item'>
+               <div style={{width: '40px'}}><FontAwesomeIcon icon={faUserGraduate} /></div>
+               <div>
+                  <span className='award-text-header'>James Watt Scholarship</span>
+                  <br />
+                  <span className='award-date'>April 2024</span>
+                  <br />
+                  Selected from among top-tier candidates as the recipient of the prestigious James Watt Scholarship for PhD
+                  research at Heriot-Watt University.
+               </div>
+               </div>
+               <div className='awards-item'>
                <div style={{width: '40px'}}><FontAwesomeIcon icon={faAward} /></div>
                <div>
                   <span className='award-text-header'>Sponsorship - Synapse AI Symposium</span>

@@ -13,7 +13,7 @@ const Home = () => {
 
         const heroText = [
                 <div>
-                        Image Processing and Computer Vision (M.S.) Graduate &nbsp;|&nbsp; Ex-TCS
+                        PhD, BASP Lab, Heriot-Watt University, Edinburgh &nbsp;|&nbsp; Erasmus Mundus MSc, IPCV
                         <div className='academic-hero'>
                                 <AcademicBar className='academic-hero' />
                         </div>                        
@@ -24,10 +24,14 @@ const Home = () => {
 
         const introText = [
                 <p style={{marginLeft: '10%', marginRight: 0}}>
-                        I recently completed my Triple-Masters degree in Image Processing and Computer Vision (<b>IPCV MSc</b>) at universities 
-                        in Hungary, Spain, and France, graduating with a 4.51/5 GPA and placing second in my batch. I was fortunate to study 
-                        with a 100% IPCV Excellence Scholarship. During my final semester, I interned at <b>IMS Bordeaux</b>, working on 
-                        "<i>Parameter Learning in Tomography.</i>"
+                        I am a current <b>PhD</b> scholar at the <b>Biomedical and Astronomical Signal Processing (BASP) Laboratory,
+                        Heriot-Watt University, Edinburgh, UK</b>. I am researching in the field of physics-based astronomical
+                        image reconstruction of black holes. 
+                        <br /><br />
+                        I recently completed my Triple-Masters degree in Image Processing and Computer Vision (<b>IPCV MSc</b>) at 
+                        universities in Hungary, Spain, and France, graduating with a 4.51/5 GPA and placing second in my batch. 
+                        I was fortunate to study with a 100% IPCV Excellence Scholarship. During my final semester, I interned 
+                        at <b>IMS Bordeaux</b>, working on "<i>Parameter Learning in Tomography.</i>"
                         <br /><br />
                         My academic journey began with a Bachelor of Technology degree from Amity University in Kolkata, India, in 2019, where 
                         I was honored as the Silver Medalist in Electronics and Communication Engineering. My undergraduate thesis focused on 
