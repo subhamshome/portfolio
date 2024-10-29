@@ -133,6 +133,24 @@
   display: none;
 }
 
+.camera-icon {
+  color: white;
+}
+
+.camera-icon:hover {
+  color: grey;
+  transition: all 0.3s ease;
+}
+
+.scrolled-camera-icon {
+  color: black;
+}
+
+.scrolled-camera-icon:hover {
+  color: white;
+  transition: all 0.3s ease;
+}
+
 @media screen and (max-width: 1080px) {
   .nav {
     display: none;
@@ -235,5 +253,10 @@
   .scrolled-a:hover {
     background-color: grey;
   }
+
+  .camera-icon {
+    color: black !important;
+  }
 }
+
 

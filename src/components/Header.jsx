@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/header.css'; 
 import resume from '../assets/Subham_Shome_CV.pdf';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faClose, faCamera } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
  const [scrolling, setScrolling] = useState(false);
@@ -89,6 +89,11 @@ const Header = () => {
         <Link to={resume} target="_blank" className={`header-button ${scrolling ? 'header-button-scrolled' : ''}`}>
           Resume
         </Link>
+        <div className="camera-div">
+          <a href="https://www.subhamshomephotography.com" target="_blank" rel="noopener noreferrer"  className={`a ${scrolling ? 'scrolled-camera-icon' : ''}`}>
+            <FontAwesomeIcon icon={faCamera} />
+          </a>
+        </div>
       </nav>
 
       <button className={`mobile-menu-button ${scrolling ? 'scrolled-mobile-menu-button' : ''} 
@@ -126,6 +131,12 @@ const Header = () => {
             <Link to={resume} target="_blank" className="header-button-scrolled">
               Resume
             </Link>
+            <br />
+            <div>
+              <a href="https://www.subhamshomephotography.com" target="_blank" rel="noopener noreferrer" className="camera-icon">
+                <FontAwesomeIcon icon={faCamera} />
+              </a>
+            </div>
         </nav>
       </div>
       
