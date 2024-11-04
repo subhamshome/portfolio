@@ -1,6 +1,6 @@
 # Academic Portfolio Website Readme
 
-[Live Demo](https://portfolio-subham-shomes-projects.vercel.app/)
+[Live Demo](https://www.subhamshome.com/)
 
 ## by Subham Shome
 
@@ -53,7 +53,7 @@ This website is deployed with the help of Vercel.
 
 If you have any questions, need assistance, or want to contribute to this project, please don't hesitate to contact me.
 
-Email: subham.shome@etu.u-bordeaux.fr<br />
+Email: ss3038@hw.ac.uk<br />
 GitHub: https://github.com/subhamshome<br />
 
 If you are using this website as a template, please mention this repository as the reference repo.
