@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import anaconda from '../assets/skills/anaconda.png'
+import anaconda from '../assets/skills/anaconda.png';
+import astropy from '../assets/skills/astropy.png';
 import colab from '../assets/skills/colab.png';
 import cpp from '../assets/skills/cpp.png';
 import git from '../assets/skills/git.png';
@@ -18,18 +19,18 @@ import pytorch from '../assets/skills/pytorch.png';
 import skimage from '../assets/skills/skimage.png';
 import sklearn from '../assets/skills/sklearn.png';
 import tensorflow from '../assets/skills/tensorflow.png';
+import tex from '../assets/skills/tex.png';
 import vscode from '../assets/skills/vscode.png';
 import '../styles/skills.css';
 
 
-const all = [python, matlab, cpp, sql, tensorflow, keras, pytorch, opencv, skimage, 
-    sklearn, pillow, numpy, pandas, matplotlib, git, latex, jupyter, anaconda, vscode, colab];
+const languages = [python, matlab, cpp, sql, tex];
 
-const languages = [python, matlab, cpp, sql];
-
-const libraries = [tensorflow, keras, pytorch, opencv, sklearn, skimage, pillow, numpy, pandas, matplotlib];
+const libraries = [tensorflow, keras, pytorch, opencv, sklearn, skimage, astropy, pillow, numpy, pandas, matplotlib];
 
 const tools = [git, latex, jupyter, anaconda, vscode, colab];
+
+const all = [...languages, ...libraries, ...tools];
 
 const labels = {
     [python]: 'Python',
@@ -37,6 +38,7 @@ const labels = {
     [cpp]: 'C++',
     [git]: 'Git',
     [keras]: 'Keras',
+    [astropy]: 'Astropy',
     [latex]: 'LaTeX',
     [matplotlib]: 'Matplotlib',
     [numpy]: 'NumPy',
@@ -52,6 +54,7 @@ const labels = {
     [anaconda]: 'Anaconda',
     [vscode]: 'Visual Studio Code',
     [colab]: 'Google Colab',
+    [tex]: 'Tex',
 };
 
 const Skills = () => {
