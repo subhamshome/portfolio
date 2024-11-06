@@ -133,8 +133,23 @@
   display: none;
 }
 
+.camera-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+}
+
+.camera-div-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
 .camera-icon {
   color: white;
+  margin-left: -10px !important;
 }
 
 .camera-icon:hover {

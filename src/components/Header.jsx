@@ -8,6 +8,7 @@ import { faBars, faClose, faCamera } from '@fortawesome/free-solid-svg-icons';
 const Header = () => {
  const [scrolling, setScrolling] = useState(false);
  const blog = 'https://subhamshome.medium.com';
+ const photoSite = 'https://www.subhamshomephotography.com';
  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
  const toggleMobileMenu = () => {
@@ -90,9 +91,9 @@ const Header = () => {
           Resume
         </Link>
         <div className="camera-div">
-          <a href="https://www.subhamshomephotography.com" target="_blank" rel="noopener noreferrer"  className={`a ${scrolling ? 'scrolled-camera-icon' : ''}`}>
+          <Link to={photoSite} target="_blank" rel="noopener noreferrer"  className={`a ${scrolling ? 'scrolled-camera-icon' : ''}`}>
             <FontAwesomeIcon icon={faCamera} />
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -132,10 +133,10 @@ const Header = () => {
               Resume
             </Link>
             <br />
-            <div>
-              <a href="https://www.subhamshomephotography.com" target="_blank" rel="noopener noreferrer" className="camera-icon">
+            <div className='camera-div-mobile'>
+              <Link to={photoSite} target="_blank" rel="noopener noreferrer" className="camera-icon">
                 <FontAwesomeIcon icon={faCamera} />
-              </a>
+              </Link>
             </div>
         </nav>
       </div>
