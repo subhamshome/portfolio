@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Tests
+        run: npm test -- --watchAll=false
+        env:
+          CI: true
+      - name: Production build (warnings fail the build, like on Vercel)
+        run: npm run build
+        env:
+          CI: true
+      - name: Check that the prerendered page contains real content
+        run: |
+          grep -q 'data-prerendered' build/index.html
+          grep -q 'Subham SHOME' build/index.html
+          grep -q 'Publications' build/index.html
