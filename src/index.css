@@ -1,11 +1,90 @@
+/* Design tokens: change the palette and font here */
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --card: #ffffff;
+  --ink: #1b1b2f;
+  --muted: #5b6072;
+  --line: #e5e7f0;
+  --surface-lavender: #f5f3ff;
+  --surface-teal: #f0fdfa;
+  --surface-rose: #fff1f5;
+
+  /* fills (buttons, badges, bars): white text sits on these */
+  --accent: #4f46e5;
+  --accent-dark: #3730a3;
+  --violet: #7c3aed;
+  --teal: #0f766e;
+  --highlight: #db2777;
+  --amber: #c2410c;
+  --gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+
+  /* the same hues when used as TEXT or thin borders on the page background */
+  --accent-t: #4f46e5;
+  --accent-dark-t: #3730a3;
+  --violet-t: #7c3aed;
+  --teal-t: #0f766e;
+  --highlight-t: #db2777;
+  --amber-t: #c2410c;
+
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f1020;
+  --card: #1a1b2e;
+  --ink: #e8e9f5;
+  --muted: #a3a6bd;
+  --line: #2d2f4a;
+  --surface-lavender: #151630;
+  --surface-teal: #0e1d24;
+  --surface-rose: #211426;
+
+  --accent: #5b54e8;
+  --accent-dark: #4338ca;
+  --violet: #7c3aed;
+  --teal: #0f766e;
+  --highlight: #db2777;
+  --amber: #c2410c;
+  --gradient: linear-gradient(135deg, #5b54e8 0%, #7c3aed 50%, #db2777 100%);
+
+  --accent-t: #a5b4fc;
+  --accent-dark-t: #c7d2fe;
+  --violet-t: #c4b5fd;
+  --teal-t: #5eead4;
+  --highlight-t: #f9a8d4;
+  --amber-t: #fdba74;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font);
+  color: var(--ink);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: transparent;
+  background-color: var(--bg);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+button {
+  font-family: inherit;
 }
 
 code {

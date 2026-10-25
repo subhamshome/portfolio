@@ -1,62 +1,89 @@
 .footer {
-    width: 100 vw;
-    padding: none;
-    margin: none;
+    width: 100%;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    background-color: #fff;
-    color: #000;
-    height: 100px;
-    box-shadow: 0 -4px 10px 0 rgba(0, 0, 0, 0.2);;
+    justify-content: center;
+    background-color: var(--bg);
+    color: var(--ink);
+    padding: 30px 0 24px;
+    box-sizing: border-box;
+    border-top: 3px solid transparent;
+    border-image: var(--gradient) 1;
 }
 
 .footer-content {
     display: flex;
-    width: 90vw;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 8px;
+}
+
+.footer-links a {
+    padding: 6px 14px;
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 10px 24px;
 }
 
-.footer-column {
-    display: flex;
-    flex: 1;
+.footer .footer-theme {
+    margin: 0;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--ink);
+    font-size: 15px;
+}
+
+.footer .footer-theme:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.footer-credit {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
     text-align: center;
-    align-content: center;
-    justify-content: center;
-    line-height: 1.2rem;
-}
-/* Style the copyright notice */
-.footer p {
-    font-size: 14px;
-
 }
 
-.email {
-    color: black;
-    margin: 10px; 
-    font-size: 24px;
-    text-decoration: none;
-    transition: all 0.3s;   
+.footer-credit a {
+    color: var(--muted);
+    text-decoration: underline;
 }
 
-.email:hover {
-    transform: rotate(-15deg) scale(1.2);
-    color: #EA4335;
-}
-.footer-link {
-    color: black;
-    text-decoration: none;
+.footer-credit a:hover {
+    color: var(--accent-t);
 }
 
 @media (max-width: 1080px) {
     .footer {
-        height: 20vh;
-    }
-    .footer-content {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 5px;
+        padding-bottom: 80px; /* keeps the credit line clear of the floating back-to-top button */
     }
 }

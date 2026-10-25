@@ -7,40 +7,151 @@
 }
 
 .timeline-main {
-    margin-right: 10%;
-    margin-left: 10%;
+    margin: 0;
 }
 
 .home-headers {
-    margin-top: 40px; 
-    color: black;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: var(--ink);
+    font-size: 2rem;
+}
+
+.home-headers::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    border-radius: 2px;
+    margin: 12px auto 0;
+    background: var(--gradient);
+}
+
+.skills-main {
+    background-color: var(--surface-lavender);
+}
+
+.projects-section {
+    background-color: var(--surface-teal);
+}
+
+.awards-main {
+    background-color: var(--surface-rose);
+}
+
+.skills-main,
+.projects-section,
+.awards-main {
+    padding-bottom: 50px;
+}
+
+.publications-section {
+    padding-bottom: 60px;
 }
 
 #home {
-    
-    background-image: url('../assets/ai_video.gif');
+    background-image: url('../assets/hero-poster.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; 
     position: relative;
-    height: 90vh; 
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 90vh;
+    height: 90svh;
+    min-height: 420px;
     color: #ffffff;
     text-align: center;
-    padding: 100px 0;
+    padding: 100px 20px;
     align-content: center;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
 }
-  
+
+.hero-video {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+#home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(30, 27, 75, 0.78) 0%, rgba(91, 33, 182, 0.5) 60%, rgba(190, 24, 93, 0.4) 100%);
+    z-index: 1;
+}
+
+.hero {
+    position: relative;
+    z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-video {
+        display: none;
+    }
+}
+
 .hero h1 {
-    font-size: 5rem;
+    font-size: clamp(2.4rem, 9vw, 5rem);
     margin: 0;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin: 20px 20%;
+}
+
+.hero .hero-pitch {
+    font-size: clamp(1.1rem, 3.2vw, 1.6rem);
+    margin: 15px auto 20px;
+    max-width: 800px;
+}
+
+.hero-affiliation {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.intro-toggle {
+    background: none;
+    border: 1px solid var(--accent-t);
+    border-radius: 999px;
+    color: var(--accent-t);
+    padding: 8px 22px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 5px;
+    transition: all 0.3s;
+}
+
+.intro-toggle:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.hero-cv-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 999px;
+    background: var(--gradient);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.hero-cv-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .academic-hero {
@@ -59,7 +170,12 @@
 }
 
 .sections-home {
-    margin-top: 120px;
+    padding-top: 60px;
+    scroll-margin-top: 60px;
+}
+
+.about {
+    padding-bottom: 60px;
 }
 
 .about h3 {
@@ -70,6 +186,7 @@
 .intro-grid{
     display: grid;
     grid-template-columns: 25% 75%;
+    align-items: start;
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 40px;
@@ -88,12 +205,20 @@
     transition: all 0.3s ease;
 }
 
-.intro-image:hover {
-    transform: scale(1.05) rotate(5deg);;
+@media (hover: hover) {
+    .intro-image:hover {
+        transform: scale(1.05) rotate(5deg);
+    }
 }
 
 .intro-text-container {
     text-align: left;
+    margin-left: 10%;
+}
+
+.intro-text-container p {
+    margin: 0 0 1em 0 !important;
+    line-height: 1.6;
 }
 
 .research-card-section {
@@ -107,7 +232,7 @@
 }
 
 .intro-text-codes {
-    color: #007fff;
+    color: var(--accent-t);
     font-weight: bold;
 }
 
@@ -129,14 +254,23 @@
     }
 
     .intro-text-container {
-        text-align: center;
+        text-align: left;
+        margin-left: 0;
     }
 
     .about p {
         margin: 0 !important;
     }
 
+    .intro-text-container p {
+        margin: 0 0 1em 0 !important;
+    }
+
     .research-card-section {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+.hero-video::-webkit-media-controls,
+.hero-video::-webkit-media-controls-enclosure {
+    display: none !important;
 }

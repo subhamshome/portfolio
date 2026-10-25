@@ -1,0 +1,4 @@
+{
+  "redirects": [{ "source": "/cv", "destination": "/Subham_Shome_CV.pdf", "permanent": false }],
+  "rewrites": [{ "source": "/((?!static/|.*\\..*).*)", "destination": "/index.html" }]
+}
