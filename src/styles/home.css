@@ -118,25 +118,6 @@
     opacity: 0.9;
 }
 
-.intro-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0 0 16px 0;
-    padding: 0;
-    list-style: none;
-}
-
-.intro-highlights li {
-    padding: 4px 12px;
-    border: 1px solid var(--accent);
-    border-radius: 999px;
-    background: var(--surface-lavender);
-    color: var(--accent-dark-t);
-    font-size: 13px;
-    font-weight: 600;
-}
-
 .intro-toggle {
     background: none;
     border: 1px solid var(--accent-t);
