@@ -1,60 +1,45 @@
-# Academic Portfolio Website Readme
+# Academic Portfolio Website
 
-[Live Demo](https://www.subhamshome.com/)
+[Live site](https://www.subhamshome.com/) · built by Subham Shome
 
-## by Subham Shome
+A single-page React portfolio (Create React App) with sections for introduction, skills, timeline, research projects, awards and contact. It is responsive and tuned for phones.
 
-Welcome to my personal academic portfolio website! This README will guide you through the structure, features, and how to set up and customize this website to showcase your academic achievements and accomplishments.
+## Run locally
 
-Table of Contents:
+```bash
+npm install
+npm start        # dev server on http://localhost:3000
+npm test         # smoke tests (also run by GitHub Actions on every push)
+npm run build    # production build into /build
+```
 
-1. Introduction
-2. Getting Started
-3. Structure
-4. Deployment
-5. Contact
+## Structure
 
-## 1. Introduction
+- `public/index.html`: page title, meta description and Open Graph / Twitter tags (link previews).
+- `src/index.js`: entry point; `src/App.jsx` composes the header, routes and footer.
+- `src/components/`: one component per section (`Home`, `Skills`, `Timeline`, `Projects`, `Awards`, `Contact`, ...).
+- `src/styles/`: one stylesheet per component.
+- `src/assets/`: images, the hero video (`hero.mp4` / `hero.webm` + poster) and the CV PDF.
+- `.github/workflows/ci.yml`: runs the tests and a production build on every push / PR.
+- `src/App.test.jsx`: smoke tests (sections, links, emails, accessibility basics, content).
+- `src/index.css`: design tokens (colours, font). Change the palette here.
+- `vercel.json`: single-page-app rewrite so unknown paths fall back to the app.
 
-This academic portfolio website is designed to help you showcase your academic journey, research projects, publications, and personal achievements. It is a simple, yet elegant, website that allows you to present your accomplishments in an organized and visually appealing manner.
+## Content you will edit most
 
-## 2. Getting Started
+- Projects: `projectsData` in `src/components/Projects.jsx`.
+- Awards: `src/components/Awards.jsx`.
+- Timeline: `entries` (and the journey strip `stops`) in `src/components/Timeline.jsx`.
+- CV: replace `public/Subham_Shome_CV.pdf` (keep the filename; `/cv` redirects to it).
+- Skills: `groups` in `src/components/Skills.jsx`.
+- Photography link: commented out in `src/components/Header.jsx` (search for `PHOTO-LINK`).
 
-To set up your own academic portfolio website, follow these steps:
+## Deployment
 
-1. **Fork** this repository: Start by forking this repository to create a copy in your own GitHub account.
-2. **Clone** the repository: Clone the forked repository to your local machine using Git: `git clone https://github.com/subhamshome/portfolio.git`
-3. Navigate to the project directory:`cd portfolio`
+Deployed on Vercel from the `master` branch; every push to `master` updates production.
 
-Customize the content: Update the content, such as your name, bio, academic history, research projects, by editing the HTML and Markdown files in the content directory.
+## Contact
 
-Configure the settings: Customize the website by modifying the settings in the config.js file, such as the site title, social media links, and color schemes.
+Email: ss3038@hw.ac.uk · GitHub: https://github.com/subhamshome
 
-Preview your site: To see how your site looks locally, you can use a simple web server or a development tool like Live Server for Visual Studio Code.
-
-Test and make additional changes: Review your website locally and make further adjustments as necessary.
-
-## 3. Structure
-
-The website's structure is organized as follows:
-
-- public/index.html: The main page of your academic portfolio.
-- src/app.js: The main entry point for the project.
-- src/index.js: The main entry point for rendering the components.
-- src/components/: Contains all the `.jsx` and `.css` files for rendering and styling.
-- src/assets/: Houses all assets such as images and gifs.
-- README.md: This file that provides instructions and information about the project.
-
-## 4. Deployment
-
-This website is deployed with the help of Vercel.
-
-## 5. Contact
-
-If you have any questions, need assistance, or want to contribute to this project, please don't hesitate to contact me.
-
-Email: ss3038@hw.ac.uk<br />
-GitHub: https://github.com/subhamshome<br />
-
-If you are using this website as a template, please mention this repository as the reference repo.
-Thank you for using this academic portfolio template. Best of luck with showcasing your academic journey and accomplishments!
+If you use this as a template, please credit this repository.

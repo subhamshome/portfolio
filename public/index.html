@@ -3,16 +3,73 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Academic portfolio of Subham Shome, PhD researcher at Heriot-Watt University working on physics-based image reconstruction for radio astronomy, deep learning and computer vision."
     />
+    <meta name="author" content="Subham Shome" />
+    <link rel="canonical" href="https://www.subhamshome.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Subham Shome" />
+    <meta property="og:title" content="Subham Shome | PhD Researcher, Image Reconstruction &amp; Computer Vision" />
+    <meta
+      property="og:description"
+      content="PhD researcher at Heriot-Watt University (BASP Lab). Research projects, skills, timeline and awards."
+    />
+    <meta property="og:url" content="https://www.subhamshome.com/" />
+    <meta property="og:image" content="https://www.subhamshome.com/social_preview.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Subham Shome | PhD Researcher, Image Reconstruction &amp; Computer Vision" />
+    <meta
+      name="twitter:description"
+      content="PhD researcher at Heriot-Watt University (BASP Lab). Research projects, skills, timeline and awards."
+    />
+    <meta name="twitter:image" content="https://www.subhamshome.com/social_preview.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Subham Shome</title>
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a light flash.
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Subham Shome",
+        "url": "https://www.subhamshome.com/",
+        "jobTitle": "PhD Researcher",
+        "description": "PhD researcher working on physics-based image reconstruction for radio astronomy, deep learning and computer vision.",
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "Heriot-Watt University" },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Amity University Kolkata" },
+          { "@type": "CollegeOrUniversity", "name": "University of Bordeaux" },
+          { "@type": "CollegeOrUniversity", "name": "Universidad Autónoma de Madrid" },
+          { "@type": "CollegeOrUniversity", "name": "Pázmány Péter Catholic University" }
+        ],
+        "sameAs": [
+          "https://github.com/subhamshome",
+          "https://linkedin.com/in/subhamshome",
+          "https://orcid.org/0009-0002-4120-1979",
+          "https://scholar.google.com/citations?user=uU-S0zMAAAAJ",
+          "https://subhamshome.medium.com"
+        ]
+      }
+    </script>
+    <title>Subham Shome | PhD Researcher, Image Reconstruction &amp; Computer Vision</title>
   </head>
   <body>
     <div id="root"></div>

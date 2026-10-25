@@ -1,34 +1,36 @@
 .research-card {
-    background-color: #007fff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    transition: transform 0.2s;
-    max-height: 15px;
-    align-content: center;
-    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 14px;
+    border-radius: 999px;
+    background-color: var(--accent);
+    color: #fff;
     text-align: center;
-    color: white;
-    display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .research-text {
-    margin: -2px 0 0 0;
+    margin: 0;
     padding: 0;
-    font-weight: bold;
-}
-.research-card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background-color: #EB9F42;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.3;
 }
 
+.research-card:nth-child(4n + 2) { background-color: var(--violet); }
+.research-card:nth-child(4n + 3) { background-color: var(--teal); }
+.research-card:nth-child(4n + 4) { background-color: var(--highlight); }
+
+@media (hover: hover) {
+    .research-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+    }
+}
 
 @media (max-width: 1080px) {
-    .research-card {
-        padding: none;
-        align-content: center;  
-    }
     .research-text {
-        font-size: 12px;
+        font-size: 13px;
     }
 }
