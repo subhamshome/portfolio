@@ -12,7 +12,8 @@
 }
 
 .view-more-button {
-    background-color: #EB9F42; 
+    border-radius: 999px;
+    background-color: var(--highlight); 
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -22,7 +23,7 @@
 }
   
 .view-more-button:hover {
-    background-color: #007FFF; 
+    background-color: var(--accent); 
     transform: scale(1.025);
 }
 

@@ -55,13 +55,13 @@
 
 .contact-links {
     text-decoration: none;
-    color: #007fff;
+    color: var(--accent-t);
     transition: all 0.3s ease;
 }
 
 .contact-links:hover {
     text-decoration: none;
-    color: #EB9F42;
+    color: var(--highlight-t);
 }
 
 .contact-grid-2 {
@@ -74,8 +74,13 @@
 }
 
 .map-contact {
-    border: 2px solid black; 
+    border: 2px solid var(--ink);
     margin: 5%;
+    width: 90%;
+    max-width: 600px;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    align-self: center;
 }
 
 @media (max-width: 1080px) {
@@ -90,7 +95,7 @@
         flex-wrap: wrap;
         flex-direction: column;
         padding: 5%;
-        max-width: 80vw
+        max-width: 80vw;
     }
 
     .contact-item {
@@ -103,7 +108,10 @@
     }
 
     .map-contact {
-        max-width: 80vw;
-        max-height: auto;
+        max-width: 100%;
+        margin: 5% 0;
     }
+}
+:root[data-theme="dark"] .map-contact {
+    filter: invert(90%) hue-rotate(180deg);
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import anaconda from '../assets/skills/anaconda.png';
 import astropy from '../assets/skills/astropy.png';
 import colab from '../assets/skills/colab.png';
@@ -24,90 +24,127 @@ import vscode from '../assets/skills/vscode.png';
 import '../styles/skills.css';
 
 
-const languages = [python, matlab, cpp, sql, tex];
+// `icon` is a logo image; `badge` is a short monogram used when there is no logo.
+const skill = (name, icon, badge) => ({ name, icon, badge });
 
-const libraries = [tensorflow, keras, pytorch, opencv, sklearn, skimage, astropy, pillow, numpy, pandas, matplotlib];
+const groups = [
+    {
+        title: 'Research Focus',
+        color: 'var(--highlight)',
+        text: 'var(--highlight-t)',
+        skills: [
+            skill('Image Reconstruction', null, 'IR'),
+            skill('Inverse Problems', null, 'IP'),
+            skill('Radio Interferometry', null, 'RI'),
+            skill('VLBI / EHT Data', null, 'EHT'),
+            skill('Interferometric Calibration', null, 'CAL'),
+            skill('Graph Neural Networks', null, 'GNN'),
+            skill('Tomographic Imaging', null, 'CT'),
+        ],
+    },
+    {
+        title: 'Deep Learning & ML',
+        color: 'var(--accent)',
+        text: 'var(--accent-t)',
+        skills: [
+            skill('PyTorch', pytorch),
+            skill('PyTorch Geometric', null, 'PyG'),
+            skill('PyTorch Lightning', null, 'PL'),
+            skill('TensorFlow', tensorflow),
+            skill('Keras', keras),
+            skill('Scikit-Learn', sklearn),
+        ],
+    },
+    {
+        title: 'HPC & GPU Computing',
+        color: 'var(--amber)',
+        text: 'var(--amber-t)',
+        skills: [
+            skill('CUDA', null, 'CU'),
+            skill('Multi-GPU Training', null, 'GPU'),
+            skill('PyTorch DDP', null, 'DDP'),
+            skill('Slurm', null, 'SL'),
+            skill('Linux / Bash', null, 'sh'),
+        ],
+    },
+    // MLOps & Engineering: uncomment this group when these skills are ready to show.
+    // {
+    //     title: 'MLOps & Engineering',
+    //     color: 'var(--teal)',
+    //     text: 'var(--teal-t)',
+    //     skills: [
+    //         skill('Docker', null, 'Dk'),
+    //         skill('MLflow', null, 'ML'),
+    //         skill('GitHub Actions', null, 'CI'),
+    //         skill('pytest', null, 'pt'),
+    //     ],
+    // },
+    {
+        title: 'Scientific Computing & Imaging',
+        color: 'var(--violet)',
+        text: 'var(--violet-t)',
+        skills: [
+            skill('NumPy', numpy),
+            skill('SciPy', null, 'Sp'),
+            skill('Pandas', pandas),
+            skill('Matplotlib', matplotlib),
+            skill('Astropy', astropy),
+            skill('eht-imaging', null, 'ehtim'),
+            skill('OpenCV', opencv),
+            skill('Scikit-Image', skimage),
+            skill('Pillow', pillow),
+        ],
+    },
+    {
+        title: 'Languages',
+        color: 'var(--teal)',
+        text: 'var(--teal-t)',
+        skills: [
+            skill('Python', python),
+            skill('MATLAB', matlab),
+            skill('C++', cpp),
+            skill('SQL (MS-SQL)', sql),
+            skill('JavaScript / React', null, 'JS'),
+            skill('C#', null, 'C#'),
+            skill('TeX', tex),
+        ],
+    },
+    {
+        title: 'Tools',
+        color: 'var(--accent-dark)',
+        text: 'var(--accent-dark-t)',
+        skills: [
+            skill('Git', git),
+            skill('LaTeX', latex),
+            skill('Jupyter Notebooks', jupyter),
+            skill('Anaconda', anaconda),
+            skill('Visual Studio Code', vscode),
+            skill('Google Colab', colab),
+            skill('TensorBoard', null, 'TB'),
+        ],
+    },
+];
 
-const tools = [git, latex, jupyter, anaconda, vscode, colab];
-
-const all = [...languages, ...libraries, ...tools];
-
-const labels = {
-    [python]: 'Python',
-    [matlab]: 'Matlab',
-    [cpp]: 'C++',
-    [git]: 'Git',
-    [keras]: 'Keras',
-    [astropy]: 'Astropy',
-    [latex]: 'LaTeX',
-    [matplotlib]: 'Matplotlib',
-    [numpy]: 'NumPy',
-    [opencv]: 'OpenCV',
-    [pandas]: 'Pandas',
-    [pillow]: 'Pillow',
-    [pytorch]: 'PyTorch',
-    [skimage]: 'Scikit-Image',
-    [sklearn]: 'Scikit-Learn',
-    [tensorflow]: 'TensorFlow',
-    [sql]: 'SQL (MS-SQL)',
-    [jupyter]: 'Jupyter Notebooks',
-    [anaconda]: 'Anaconda',
-    [vscode]: 'Visual Studio Code',
-    [colab]: 'Google Colab',
-    [tex]: 'Tex',
-};
-
-const Skills = () => {
-const [activeTab, setActiveTab] = useState('languages');
-
-const renderSkillsList = (skillList) => (
-    <div className="icon-grid">
-    {skillList.map((company, index) => (
-        <div className="icon-item" key={index}>
-        <img src={company} alt={`Company ${index + 1}`} />
-        <div className="label">{labels[company] || 'Label not available'}</div>
-        </div>
-    ))}
+const Skills = () => (
+    <div className="skills">
+        {groups.map(({ title, color, text, skills }) => (
+            <div className="skill-group" key={title} style={{ '--group-color': color, '--group-text': text }}>
+                <h3 className="skill-group-title">{title}</h3>
+                <ul className="skill-chips">
+                    {skills.map(({ name, icon, badge }) => (
+                        <li className="skill-chip" key={name}>
+                            {icon ? (
+                                <img src={icon} alt="" loading="lazy" />
+                            ) : (
+                                <span className="skill-badge" aria-hidden="true">{badge}</span>
+                            )}
+                            <span>{name}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        ))}
     </div>
 );
 
-return (
-    <div className="skills">
-
-        <div className="tab-container">
-            <div className="tabs">
-            <button
-                onClick={() => setActiveTab('languages')}
-                className={activeTab === 'languages' ? 'active' : ''}
-            >
-                Languages
-            </button>
-            <button
-                onClick={() => setActiveTab('libraries')}
-                className={activeTab === 'libraries' ? 'active' : ''}
-            >
-                Libraries
-            </button>
-            <button
-                onClick={() => setActiveTab('tools')}
-                className={activeTab === 'tools' ? 'active' : ''}
-            >
-                Tools
-            </button>
-            <button
-                onClick={() => setActiveTab('all')}
-                className={activeTab === 'all' ? 'active' : ''}
-            >
-                All
-            </button>
-            </div>
-            {activeTab === 'languages' && renderSkillsList(languages)}
-            {activeTab === 'libraries' && renderSkillsList(libraries)}
-            {activeTab === 'tools' && renderSkillsList(tools)}
-            {activeTab === 'all' && renderSkillsList(all)}
-        </div>
-    </div>
-    );
-};
-  
 export default Skills;

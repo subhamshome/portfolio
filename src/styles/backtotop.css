@@ -3,9 +3,10 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #333;
+    background: var(--gradient);
     color: #fff;
     border: none;
+    padding: 0;
     border-radius: 50%;
     cursor: pointer;
     font-size: 24px;
@@ -23,7 +24,7 @@
 }
 
 .back-to-top-button:hover {
-  background-color: #007fff;
+  filter: brightness(1.1);
 }
 
 .arrow {

@@ -13,28 +13,23 @@ const BackToTopButton = () => {
     });
   };
 
-  const toggleVisibility = () => {
-    if (window.scrollY > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
+    const toggleVisibility = () => setIsVisible(window.scrollY > 300);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
   }, []);
 
   return (
-    <div
+    <button
+      type="button"
+      aria-label="Back to top"
       className={`back-to-top-button ${isVisible ? 'visible' : ''}`}
       onClick={scrollToTop}
     >
       <FontAwesomeIcon icon={faArrowUp} className='arrow' />
-    </div>
+    </button>
   );
 };
 

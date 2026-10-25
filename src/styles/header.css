@@ -1,7 +1,9 @@
 .header {
   background: none;
   color: grey;
-  width: 100vw;
+  width: 100%;
+  left: 0;
+  top: 0;
   display: flex;
   z-index: 999;
   height: 80px;
@@ -20,7 +22,7 @@
 }
 
 .scrolled-text {
-  color: #333;
+  color: var(--ink);
   transition: color 0.3s ease;
 }
 
@@ -40,16 +42,19 @@
 .a {
   text-decoration: none;
   color: white;
-  margin: 0 10px;
-  padding: 10px;
+  margin: 0 4px;
+  padding: 8px 14px;
+  border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 14px;
 }
 
-.a:hover {
-  background-color: grey;
-  color: white;
+@media (hover: hover) {
+  .a:hover {
+    background-color: grey;
+    color: white;
+  }
 }
 
 .a.active{
@@ -59,20 +64,22 @@
 
 .scrolled-a {
   text-decoration: none;
-  color: rgb(100, 100, 100);
-  margin: 0 10px;
-  padding: 10px;
+  color: var(--ink);
+  margin: 0 4px;
+  padding: 8px 14px;
+  border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 14px;
 }
 
 .scrolled-a:hover{
-  background-color: rgb(100, 100, 100);
+  background-color: var(--accent);
   color: white;
 }
 
 .header-button {
+  border-radius: 999px;
   border: 2px solid white;
   color: white;
   background-color: transparent;
@@ -84,8 +91,9 @@
 }
 
 .header-button-scrolled {
-  border: 2px solid black;
-  color: black;
+  border-radius: 999px;
+  border: 2px solid var(--accent-t);
+  color: var(--accent-t);
   background-color: transparent;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -95,8 +103,8 @@
 }
 
 .header-button-scrolled:hover {
-  border: 2px solid black !important;
-  background-color: black !important;
+  border: 2px solid var(--accent) !important;
+  background-color: var(--accent) !important;
   color: white !important;
 } 
 
@@ -107,14 +115,15 @@
 }
 
 .scrolled {
-  background-color: white !important;
+  background-color: var(--bg) !important;
+  border-bottom: 3px solid transparent;
+  border-image: var(--gradient) 1;
   transition: background-color 0.3s ease;
   color: white;
-  width: 100vw;
+  width: 100%;
   height: 60px;
   position: fixed;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
-  width: 100vw;
 } 
 
 .mobile-menu {
@@ -158,7 +167,7 @@
 }
 
 .scrolled-camera-icon {
-  color: black;
+  color: var(--ink);
 }
 
 .scrolled-camera-icon:hover {
@@ -196,7 +205,7 @@
     top: 17px;
     right: 0;
     background: none;
-    color: black;
+    color: var(--ink);
     font-size: 24px;
     box-shadow: none;
     border: none;
@@ -211,7 +220,7 @@
     top: 17px;
     right: 0;
     background: none;
-    color: black;
+    color: var(--ink);
     font-size: 24px;
     box-shadow: none;
     border: none;
@@ -221,7 +230,7 @@
     display: block;
     margin-right: 3%;
     background: none;
-    color: black;
+    color: var(--ink);
     font-size: 24px;
     box-shadow: none;
     border: none;
@@ -238,14 +247,15 @@
     bottom: 0;
     right: 0;
     left: 0;
-    opacity: 0.99;
+    opacity: 1;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: white;
+    background-color: var(--bg);
     border: none;
     text-align: center;
     height: 100vh;
+    height: 100dvh;
     justify-content: center;
     align-content: center;
     overflow: visible;
@@ -262,16 +272,31 @@
   }
 
   .scrolled-a {
-    color: black;
+    color: var(--ink);
   }
 
   .scrolled-a:hover {
-    background-color: grey;
+    background-color: var(--accent);
   }
 
   .camera-icon {
-    color: black !important;
+    color: var(--ink) !important;
   }
 }
 
 
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 12px;
+  margin: 0 4px;
+  border-radius: 999px;
+}
+
+.theme-toggle.scrolled-a {
+  color: var(--ink);
+}

@@ -7,7 +7,7 @@
 }
 
 .academic-bar a {
-    color: black;
+    color: var(--ink);
     margin: 0 10px; 
     font-size: 24px;
     text-decoration: none;
@@ -42,6 +42,6 @@
     color: #A6CE39;
 }
 
-.email:hover {
+.academic-email:hover {
     color: #EA4335;
 }

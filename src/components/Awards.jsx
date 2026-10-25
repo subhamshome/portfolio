@@ -3,76 +3,69 @@ import '../styles/awards.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMedal, faAward, faTrophy, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 
-const Awards = () => {
-   return(
-      <div className='awards-div-main'>
-        <div className='awards-text'>
-            <div>
-               <div className='awards-item'>
-               <div style={{width: '40px'}}><FontAwesomeIcon icon={faUserGraduate} /></div>
-               <div>
-                  <span className='award-text-header'>James Watt Scholarship</span>
-                  <br />
-                  <span className='award-date'>April 2024</span>
-                  <br />
-                  Selected from among top-tier candidates as the recipient of the prestigious James Watt Scholarship for PhD
-                  research at Heriot-Watt University.
-               </div>
-               </div>
-               <div className='awards-item'>
-               <div style={{width: '40px'}}><FontAwesomeIcon icon={faAward} /></div>
-               <div>
-                  <span className='award-text-header'>Sponsorship - Synapse AI Symposium</span>
-                  <br />
-                  <span className='award-date'>June 2023</span>
-                  <br />
-                  Selected among Synapse AI Symposium’s top 50 candidates at Milan, alongside global AI luminaries.
-               </div>
-               </div>
-               <div className='awards-item'>
-               <div style={{width: '40px'}}><FontAwesomeIcon icon={faTrophy} /></div>
-               <div>
-                  <span className='award-text-header'>Winner - Cybathlon 2024</span>
-                  <br />
-                  <span className='award-date'>April 2023</span>
-                  <br />
-                  Secured Cybathlon 2023-24’s Vision Assistance Challenge victory among 21 global teams at ETH Zurich.
-               </div>
-               </div>
-               <div className='awards-item'>
-               <div style={{width: '40px'}}><FontAwesomeIcon icon={faAward} /></div>
-               <div>
-                  <span className='award-text-header'>Erasmus+ Grant</span>
-                  <br />
-                  <span className='award-date'>January 2023</span>
-                  <br />
-                  Chosen along with 9 applicants to receive the prestigious Erasmus+ Grant as funding for studies in Europe.
-               </div>
-               </div>
-               <div className='awards-item'>
-               <div style={{width: '40px'}}><FontAwesomeIcon icon={faUserGraduate} /></div>
-               <div>
-                  <span className='award-text-header'>IPCV Excellence Scholarship - 100%</span>
-                  <br />
-                  <span className='award-date'>April 2022</span>
-                  <br />
-                  Granted full IPCV scholarship as one of only 3 non-EU citizens selected from more than 1000 applicants.
-               </div>
-               </div>
-               <div className='awards-item'>
-               <div style={{width: '40px'}}><FontAwesomeIcon icon={faMedal} /></div>
-               <div>
-                  <span className='award-text-header'>Silver Medalist in Academics, BTech</span>
-                  <br />
-                  <span className='award-date'>October 2019</span>
-                  <br />
-                  Earned Silver Medal for B.Tech ECE with <span style={{fontWeight: 'bold'}}>9.26/10</span> GPA across 4 years.
-               </div>
-               </div>
-            </div>
-        </div>
-     </div>
-   )
-};
-   
-   export default Awards;
+// Newest first. `color` is the accent of the card's icon and top border.
+const awards = [
+  {
+    title: 'James Watt Scholarship',
+    date: 'April 2024',
+    icon: faUserGraduate,
+    color: 'var(--accent)',
+    text: 'Selected from among top-tier candidates as the recipient of the prestigious James Watt Scholarship for PhD research at Heriot-Watt University.',
+  },
+  {
+    title: 'Sponsorship - Synapse AI Symposium',
+    date: 'June 2023',
+    icon: faAward,
+    color: 'var(--violet)',
+    text: 'Selected among Synapse AI Symposium’s top 50 candidates at Milan, alongside global AI luminaries.',
+  },
+  {
+    title: 'Winner - Cybathlon 2023-24',
+    date: 'April 2023',
+    icon: faTrophy,
+    color: 'var(--highlight)',
+    text: 'Secured Cybathlon 2023-24’s Vision Assistance Challenge victory among 21 global teams at ETH Zurich.',
+  },
+  {
+    title: 'Erasmus+ Grant',
+    date: 'January 2023',
+    icon: faAward,
+    color: 'var(--teal)',
+    text: 'Chosen along with 9 applicants to receive the prestigious Erasmus+ Grant as funding for studies in Europe.',
+  },
+  {
+    title: 'IPCV Excellence Scholarship - 100%',
+    date: 'April 2022',
+    icon: faUserGraduate,
+    color: 'var(--accent)',
+    text: 'Granted full IPCV scholarship as one of only 3 non-EU citizens selected from more than 1000 applicants.',
+  },
+  {
+    title: 'Silver Medalist in Academics, BTech',
+    date: 'October 2019',
+    icon: faMedal,
+    color: 'var(--violet)',
+    text: <>Earned Silver Medal for B.Tech ECE with <b>9.26/10</b> GPA across 4 years.</>,
+  },
+];
+
+const Awards = () => (
+  <div className="awards-div-main">
+    <div className="awards-grid">
+      {awards.map(({ title, date, icon, color, text }) => (
+        <article className="award-card" key={title} style={{ '--award-color': color }}>
+          <div className="award-icon" aria-hidden="true">
+            <FontAwesomeIcon icon={icon} />
+          </div>
+          <div className="award-body">
+            <h4 className="award-title">{title}</h4>
+            <span className="award-date">{date}</span>
+            <p className="award-text">{text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+);
+
+export default Awards;

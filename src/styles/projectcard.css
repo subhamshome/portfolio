@@ -1,9 +1,13 @@
 .project-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ccc;
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--accent);
+    border-radius: 10px;
+    overflow: hidden;
     margin: 10px;
     padding: 10px;
+    background-color: var(--card);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
 }
@@ -15,13 +19,16 @@
     height: 100%; /* Ensure the container takes the full card height */
 }
 
-.project-card:hover {
-    transform: scale(1.025);
+@media (hover: hover) {
+    .project-card:hover {
+        transform: scale(1.025);
+    }
 }
 
 .project-card-image {
     width: 100%;
-    height: 60% !important;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
   
 .project-card-content {
@@ -36,30 +43,51 @@
   
 .project-card p {
     margin: 5px 0;
-    color: #333;
+    color: var(--ink);
 }
   
-.project-card button {
-    background-color: #007fff; 
+.project-card-button {
+    display: inline-block;
+    align-self: center;
+    background-color: var(--accent);
     color: #fff;
-    border: none;
-    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 8px 20px;
     cursor: pointer;
     font-size: 1em;
-    margin-top: auto;
+    margin: 10px 0;
 }
-  
-.project-card button:hover {
-    background-color: #EB9F42;
+
+.project-card-button:hover {
+    background-color: var(--highlight);
 }
 
 .project-card-title {
     padding-top: 15px;
 }
   
-@media (max-width: 1080px) {
-    .project-card-image {
-        width: 100%;
-        height: 70% !important;
-    }
+
+
+.project-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin: 10px 0;
+}
+
+.project-card-tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    background-color: var(--surface-lavender);
+    color: var(--accent-dark-t);
+}
+
+.project-card .project-card-result {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: var(--highlight-t);
 }
