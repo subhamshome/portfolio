@@ -18,22 +18,9 @@ const resume = `${process.env.PUBLIC_URL}/Subham_Shome_CV.pdf`;
 const Home = () => {
         const [showFullIntro, setShowFullIntro] = useState(false);
 
-        const highlights = [
-                'PhD, Heriot-Watt, 2024\u201328',
-                'Published 2025',
-                'Cybathlon 2023-24 winner',
-                'IPCV MSc, 4.51/5, 2nd in batch',
-                '3 years software dev, TCS',
-        ];
-
         const introSummary = (
                 <>
                         <p>I'm a <b>PhD</b> researcher at the <b>Biomedical and Astronomical Signal Processing (BASP) Laboratory, Heriot-Watt University</b> in Edinburgh, working on physics-based image reconstruction for radio astronomy, including imaging black holes. I came to research from three years as a software developer at TCS, then a triple Master's in Image Processing and Computer Vision across Hungary, Spain and France (4.51/5, second in my batch). I like applied maths, inverse problems and fast, GPU-accelerated code.</p>
-                        <ul className='intro-highlights' aria-label='Highlights'>
-                                {highlights.map((item) => (
-                                        <li key={item}>{item}</li>
-                                ))}
-                        </ul>
                 </>
         );
 
