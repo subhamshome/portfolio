@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/header.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { ThemeToggle } from './Theme';
 // Photography site link is switched off for now. To re-enable it, uncomment the
 // camera import below, the `photoSite` constant and the two JSX blocks marked PHOTO-LINK.
 // import { faCamera } from '@fortawesome/free-solid-svg-icons';
@@ -105,7 +104,6 @@ const Header = () => {
         <a href={resume} target="_blank" rel="noopener noreferrer" className={`header-button ${scrolling ? 'header-button-scrolled' : ''}`}>
           Resume
         </a>
-        <ThemeToggle className={scrolling ? 'scrolled-a' : ''} />
         {/* PHOTO-LINK (desktop): uncomment when the photography site is ready
         <div className="camera-div">
           <a href={photoSite} target="_blank" rel="noopener noreferrer" aria-label="Photography site" className={`a ${scrolling ? 'scrolled-camera-icon' : ''}`}>
@@ -155,8 +153,6 @@ const Header = () => {
             <a href={resume} target="_blank" rel="noopener noreferrer" className="header-button-scrolled">
               Resume
             </a>
-            <br />
-            <ThemeToggle className="scrolled-a" />
             {/* PHOTO-LINK (mobile): uncomment when the photography site is ready
             <br />
             <div className='camera-div-mobile'>

@@ -38,9 +38,10 @@ const Home = () => {
                         <source src={heroVideoWebm} type='video/webm' />
                         <source src={heroVideoMp4} type='video/mp4' />
                 </video>
+                <div className='hero-ring' aria-hidden='true' />
                 <div className='hero'>
                         <h1>Subham SHOME</h1>
-                        <p className='hero-pitch'>Physics-guided deep learning for image reconstruction and inverse problems</p>
+                        <p className='hero-pitch'>Physics-guided deep learning for VLBI image reconstruction and inverse problems</p>
                         <div className='hero-affiliation'>
                                 PhD, BASP Lab, Heriot-Watt University, Edinburgh (expected Feb 2028) &nbsp;|&nbsp; Erasmus Mundus MSc, IPCV
                                 <div className='academic-hero'>
@@ -80,6 +81,10 @@ const Home = () => {
                         <ResearchCard title="Tomographic Imaging" />
                         <ResearchCard title="Deep Learning" />
                         <ResearchCard title="Computer Vision" />
+                        <ResearchCard title="Radio Interferometry" />
+                        <ResearchCard title="VLBI / EHT Data" />
+                        <ResearchCard title="Interferometric Calibration" />
+                        <ResearchCard title="Graph Neural Networks" />
                 </div>
         </section>
 
