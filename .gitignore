@@ -23,3 +23,6 @@ temp.txt
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Personal offline notes (issues and changes), not published
+TODO.md

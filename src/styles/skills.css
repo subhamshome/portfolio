@@ -1,90 +1,135 @@
 .skills {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 32px;
     text-align: left;
 }
 
-.skill-group {
-    margin-bottom: 28px;
+/* the chart is a square-ish canvas: SVG rings underneath, HTML bubbles on top, same coordinates */
+.bubble-chart {
+    position: relative;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    container-type: inline-size;
 }
 
-.skill-group-title {
+.bubble-rings {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.bubble-ring {
+    fill: color-mix(in srgb, var(--group-text) 5%, transparent);
+    stroke: color-mix(in srgb, var(--group-text) 38%, transparent);
+    stroke-width: 1;
+    stroke-dasharray: 2 5;
+}
+
+.bubble-ring-title {
+    fill: var(--group-text);
+    font-family: var(--serif);
+    font-size: 19px;
+    letter-spacing: 0.01em;
+}
+
+.bubble {
+    position: absolute;
+    box-sizing: border-box;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 0 0 12px 0;
-    font-size: 1.05rem;
-    color: var(--group-text);
-}
-
-.skill-group-title::before {
-    content: "";
-    width: 8px;
-    height: 22px;
-    border-radius: 4px;
-    background: var(--group-color);
-}
-
-.skill-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.skill-chip {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 14px 6px 8px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-bottom: 3px solid var(--group-color);
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: transform 0.2s;
-}
-
-.skill-chip img {
-    width: 26px;
-    height: 26px;
-    object-fit: contain;
-}
-
-.skill-badge {
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 26px;
-    height: 26px;
-    padding: 0 5px;
-    box-sizing: border-box;
-    border-radius: 13px;
-    background: var(--group-color);
-    color: #fff;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0;
-}
-
-@media (hover: hover) {
-    .skill-chip:hover {
-        transform: translateY(-2px);
-    }
-}
-
-@media (max-width: 1080px) {
-    .skill-chip {
-        font-size: 13px;
-    }
-}
-
-:root[data-theme="dark"] .skill-chip img {
-    padding: 2px;
+    padding: 0;
     border-radius: 50%;
-    background: #fff;
+    text-align: center;
+    font-size: var(--f, 13px);
+    line-height: 1.12;
+    color: var(--ink);
+    cursor: default;
+    outline-offset: 3px;
+    background:
+        radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--group-text) 34%, transparent), transparent 62%),
+        color-mix(in srgb, var(--group-color) 46%, var(--bg));
+    border: 1px solid color-mix(in srgb, var(--group-text) 55%, transparent);
+    box-shadow: inset 0 -10px 22px -12px rgba(0, 0, 0, 0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
+}
+
+.bubble-name {
+    max-width: 80%;
+    font-weight: 500;
+    overflow-wrap: break-word;
+}
+
+.bubble-score {
+    position: absolute;
+    bottom: 13%;
+    left: 0;
+    right: 0;
+    font-family: var(--mono);
+    font-size: 0.78em;
+    color: var(--group-text);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.bubble:hover,
+.bubble:focus-visible {
+    z-index: 2;
+    transform: scale(1.07);
+    border-color: var(--group-text);
+    box-shadow: 0 0 0 1px var(--group-text), 0 0 32px color-mix(in srgb, var(--group-text) 35%, transparent);
+}
+
+.bubble:hover .bubble-name,
+.bubble:focus-visible .bubble-name {
+    transform: translateY(-0.45em);
+}
+
+.bubble:hover .bubble-score,
+.bubble:focus-visible .bubble-score {
+    opacity: 1;
+}
+
+.bubble-name {
+    transition: transform 0.2s ease;
+}
+
+/* fade the others while one is explored */
+.bubble-chart:has(.bubble:hover) .bubble:not(:hover),
+.bubble-chart:has(.bubble:focus-visible) .bubble:not(:focus-visible) {
+    opacity: 0.4;
+}
+
+/* one orchestrated moment: the bubbles settle in when the chart scrolls into view */
+@media (prefers-reduced-motion: no-preference) {
+    .bubble-chart:not(.is-seen) .bubble {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    .bubble-chart.is-seen .bubble {
+        animation: bubble-in 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
+        animation-delay: calc(var(--i) * 28ms);
+    }
+
+    @keyframes bubble-in {
+        from { opacity: 0; transform: scale(0.6); }
+    }
+}
+
+.skills-group-phone + .skills-group-phone {
+    margin-top: 36px;
+}
+
+.skills-group-phone h3 {
+    margin: 0 0 8px;
+    font-size: 1.35rem;
+}
+
+@media (max-width: 760px) {
+    .skills {
+        padding: 0 20px;
+    }
 }

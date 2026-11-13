@@ -1,6 +1,5 @@
 import React from 'react';
 import AcademicBar from './AcademicBar';
-import { ThemeToggle } from './Theme';
 import '../styles/footer.css';
 
 const cv = `${process.env.PUBLIC_URL}/Subham_Shome_CV.pdf`;
@@ -27,7 +26,6 @@ const Footer = () => {
 
         <div className="footer-contact">
           <AcademicBar />
-          <ThemeToggle className="footer-theme" />
         </div>
 
         <p className="footer-credit">
