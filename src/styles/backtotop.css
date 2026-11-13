@@ -3,30 +3,29 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: var(--gradient);
-    color: #fff;
-    border: none;
+    width: 44px;
+    height: 44px;
     padding: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line-strong);
     border-radius: 50%;
+    background: var(--bg);
+    color: var(--ink);
     cursor: pointer;
-    font-size: 24px;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.23);
+    transition: border-color 0.2s ease, color 0.2s ease;
     z-index: 9999;
-  }
-  
+}
+
 .back-to-top-button.visible {
-  display: block;
+    display: flex;
 }
 
 .back-to-top-button:hover {
-  filter: brightness(1.1);
+    border-color: var(--accent-t);
+    color: var(--accent-t);
 }
 
 .arrow {
-  font-size: 20px;
+    font-size: 15px;
 }

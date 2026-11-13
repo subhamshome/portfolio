@@ -1,47 +1,26 @@
 .academic-bar {
     display: flex;
     align-items: center;
-    text-align: center;
-    justify-content: center;
-    text-align: center;
+    flex-wrap: wrap;
+    gap: 2px;
 }
 
 .academic-bar a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
     color: var(--ink);
-    margin: 0 10px; 
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: color 0.2s ease;
 }
 
 .academic-bar a:hover {
-    transform:rotate(-15deg) scale(1.2);
-}
-
-.linkedin:hover {
-    color: #0e76a8;
-}
-
-.google-scholar:hover  {
-    color: #4285f4;
-}
-
-.instagram:hover {
-    color: #d62976;
+    color: var(--accent-t);
 }
 
 .kaggle {
-    font-size: 22px !important;
-}
-
-.kaggle:hover {
-    color: #0089Cf;
-}
-
-.orcid:hover {
-    color: #A6CE39;
-}
-
-.academic-email:hover {
-    color: #EA4335;
+    font-size: 19px !important;
 }

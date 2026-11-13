@@ -69,7 +69,7 @@ describe('portfolio page', () => {
 });
 
 describe('footer', () => {
-  test('has quick links to real sections, a theme toggle and a credit link', () => {
+  test('has quick links to real sections, and a credit link', () => {
     const { container } = renderApp();
     const footer = screen.getByRole('contentinfo');
     const targets = Array.from(footer.querySelectorAll('.footer-links a[href^="#"]')).map((a) => a.getAttribute('href').slice(1));
@@ -78,7 +78,7 @@ describe('footer', () => {
     expect(within(footer).getByRole('link', { name: /CV/ })).toHaveAttribute('href', expect.stringMatching(/Subham_Shome_CV\.pdf$/));
     expect(within(footer).queryByText('ss3038@hw.ac.uk')).toBeNull();
     expect(footer).not.toHaveTextContent(/Built with React/i);
-    expect(within(footer).getByRole('button', { name: /Switch to dark theme/i })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /theme/i, hidden: true })).toBeNull();
     expect(within(footer).getByRole('link', { name: /Source on GitHub/i })).toHaveAttribute('href', 'https://github.com/subhamshome/portfolio');
   });
 });
@@ -159,29 +159,6 @@ describe('timeline', () => {
     expect(toggle).toHaveAttribute('aria-expanded', 'false');
     fireEvent.click(toggle);
     expect(screen.getByRole('button', { name: /Hide details: Doctor of Philosophy/i })).toHaveAttribute('aria-expanded', 'true');
-  });
-});
-
-describe('theme', () => {
-  beforeEach(() => {
-    localStorage.clear();
-    document.documentElement.removeAttribute('data-theme');
-  });
-
-  test('defaults to light and toggles to dark, remembering the choice', () => {
-    renderApp();
-    expect(document.documentElement).toHaveAttribute('data-theme', 'light');
-    const [toggle] = screen.getAllByRole('button', { name: /Switch to dark theme/i });
-    fireEvent.click(toggle);
-    expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
-    expect(localStorage.getItem('theme')).toBe('dark');
-    expect(screen.getAllByRole('button', { name: /Switch to light theme/i }).length).toBeGreaterThan(0);
-  });
-
-  test('restores a saved dark theme on load', () => {
-    localStorage.setItem('theme', 'dark');
-    renderApp();
-    expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
   });
 });
 
