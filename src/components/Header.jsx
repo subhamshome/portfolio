@@ -11,7 +11,8 @@ const resume = `${process.env.PUBLIC_URL}/Subham_Shome_CV.pdf`;
 
 const Header = () => {
  const [scrolling, setScrolling] = useState(false);
- const blog = 'https://subhamshome.medium.com';
+ // Blog hidden for now. To bring it back, uncomment this line and the two BLOG-LINK blocks below.
+ // const blog = 'https://subhamshome.medium.com';
  // const photoSite = 'https://www.subhamshomephotography.com';
  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -86,11 +87,11 @@ const Header = () => {
         <a href="#timeline" className={`a ${scrolling ? 'scrolled-a' : ''}`} onClick={handleScrollToSection('timeline')}>
           Timeline
         </a>
-        <a href="#projects" className={`a ${scrolling ? 'scrolled-a' : ''}`} onClick={handleScrollToSection('projects')}>
-          Projects
-        </a>
         <a href="#publications" className={`a ${scrolling ? 'scrolled-a' : ''}`} onClick={handleScrollToSection('publications')}>
           Publications
+        </a>
+        <a href="#projects" className={`a ${scrolling ? 'scrolled-a' : ''}`} onClick={handleScrollToSection('projects')}>
+          Projects
         </a>
         <a href="#awards" className={`a ${scrolling ? 'scrolled-a' : ''}`} onClick={handleScrollToSection('awards')}>
           Awards
@@ -98,9 +99,11 @@ const Header = () => {
         <a href="#contact" className={`a ${scrolling ? 'scrolled-a' : ''}`} onClick={handleScrollToSection('contact')}>
           Contact
         </a>
+        {/* BLOG-LINK (desktop): uncomment to bring the blog back
         <a href={blog} target="_blank" rel="noopener noreferrer" className={`a ${scrolling ? 'scrolled-a' : ''}`}>
           Blog
         </a>
+        */}
         <a href={resume} target="_blank" rel="noopener noreferrer" className={`header-button ${scrolling ? 'header-button-scrolled' : ''}`}>
           Resume
         </a>
@@ -134,11 +137,11 @@ const Header = () => {
             <a href="#timeline" className="scrolled-a" onClick={handleScrollToSection('timeline')}>
               Timeline
             </a>
-            <a href="#projects" className="scrolled-a" onClick={handleScrollToSection('projects')}>
-              Projects
-            </a>
             <a href="#publications" className="scrolled-a" onClick={handleScrollToSection('publications')}>
               Publications
+            </a>
+            <a href="#projects" className="scrolled-a" onClick={handleScrollToSection('projects')}>
+              Projects
             </a>
             <a href="#awards" className="scrolled-a" onClick={handleScrollToSection('awards')}>
               Awards
@@ -146,9 +149,11 @@ const Header = () => {
             <a href="#contact" className="scrolled-a" onClick={handleScrollToSection('contact')}>
               Contact
             </a>
+            {/* BLOG-LINK (mobile): uncomment to bring the blog back
             <a href={blog} target="_blank" rel="noopener noreferrer" className="scrolled-a">
               Blog
             </a>
+            */}
             <br />
             <a href={resume} target="_blank" rel="noopener noreferrer" className="header-button-scrolled">
               Resume

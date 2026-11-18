@@ -14,7 +14,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3001 react-scripts start",
     "build": "IMAGE_INLINE_SIZE_LIMIT=0 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

@@ -108,7 +108,7 @@ describe('content', () => {
     renderApp();
     expect(screen.getByText(/Efficient Algorithm for Optic Disc Segmentation/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Paper \(DOI\)/i })).toHaveAttribute('href', expect.stringContaining('doi.org'));
-    expect(screen.getByRole('link', { name: /PDF/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /^PDF$/i })).toBeInTheDocument();
   });
 
   test('skills are plain grouped chips with no scores or sizes', () => {
