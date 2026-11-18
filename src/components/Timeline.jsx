@@ -12,15 +12,17 @@ import amityMono from '../assets/timeline/amity_mono.png';
 import ppcuMono from '../assets/timeline/ppcu_mono.png';
 import uamMono from '../assets/timeline/uam_mono.png';
 import ubxMono from '../assets/timeline/ubx_mono.png';
+import tcsMono from '../assets/timeline/tcs_mono.png';
 import hwuMono from '../assets/timeline/hwu_mono.png';
 import '../styles/timeline.css';
 
 // Where the journey physically went (oldest to newest).
 const stops = [
-  { place: 'Kolkata, India', what: 'B.Tech, Amity · TCS', years: '2015 – 2022', logo: amityMono },
-  { place: 'Budapest, Hungary', what: 'MSc, PPCU', years: '2022', logo: ppcuMono },
-  { place: 'Madrid, Spain', what: 'MSc, UAM', years: '2023', logo: uamMono },
-  { place: 'Bordeaux, France', what: 'MSc + thesis, UBx / IMS', years: '2023 – 2024', logo: ubxMono },
+  { place: 'Kolkata, India', what: 'B.Tech, Amity', years: '2015 – 2019', logo: amityMono },
+  { place: 'Kolkata, India', what: 'Software Developer, TCS', years: '2019 – 2022', logo: tcsMono },
+  { place: 'Budapest, Hungary', what: 'MS, PPCU', years: '2022', logo: ppcuMono },
+  { place: 'Madrid, Spain', what: 'MS, UAM', years: '2023', logo: uamMono },
+  { place: 'Bordeaux, France', what: 'MS + thesis, UBx / IMS', years: '2023 – 2024', logo: ubxMono },
   { place: 'Edinburgh, UK', what: 'PhD, Heriot-Watt', years: '2024 – now', logo: hwuMono },
 ];
 
@@ -63,7 +65,7 @@ const sections = [
         title: 'Software Developer at TCS',
         phase: 'industry',
         subtitle: 'Started my career at TCS as an Assistant Systems Engineer trainee',
-        detail: 'Full-stack development with MERN stack, plus SQL databases and some .NET (C#) backend work. Automated 20% of Walmart’s monitoring system (30%+ weekly efficiency gain) and cut ASDA.com bugs by 15%',
+        detail: 'Automated 20% of Walmart’s monitoring system (30%+ weekly efficiency gain) and cut ASDA.com bugs by 15%, through full-stack development with the MERN stack, plus SQL databases and some .NET (C#) backend work',
         date: 'Jun 2019 – Aug 2022',
         place: 'Kolkata, India',
         logo: tcs,
@@ -158,6 +160,7 @@ const sections = [
   },
 ];
 
+// Title, dates and subtitle are always visible; the detail (outcomes, supervisors) opens with the + button.
 const TimelineItem = ({ entry }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -179,10 +182,8 @@ const TimelineItem = ({ entry }) => {
             {open ? '−' : '+'}
           </button>
         </div>
-        <div className="tl-more">
-          <p className="tl-subtitle">{entry.subtitle}</p>
-          <p className="tl-detail">{entry.detail}</p>
-        </div>
+        <p className="tl-subtitle">{entry.subtitle}</p>
+        <p className="tl-detail">{entry.detail}</p>
       </div>
     </li>
   );
@@ -201,7 +202,7 @@ const Timeline = () => (
   <div className="journey">
     <ol className="journey-strip" aria-label="Places I have studied and worked, in order">
       {stops.map((stop) => (
-        <li className="journey-stop" key={stop.place}>
+        <li className="journey-stop" key={`${stop.place}-${stop.what}`}>
           <div className="journey-mark">
             <img src={stop.logo} alt="" loading="lazy" />
             <span className="journey-arrow" aria-hidden="true" />

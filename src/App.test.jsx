@@ -13,7 +13,7 @@ describe('portfolio page', () => {
   test('renders the hero with name, pitch and CV button', () => {
     renderApp();
     expect(screen.getByRole('heading', { level: 1, name: /Subham SHOME/i })).toBeInTheDocument();
-    expect(screen.getByText(/Physics-guided deep learning/i)).toBeInTheDocument();
+    expect(screen.getByText(/Physics-guided deep learning for VLBI/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Download CV/i })).toHaveAttribute('href', expect.stringMatching(/Subham_Shome_CV\.pdf$/));
   });
 
@@ -111,20 +111,21 @@ describe('content', () => {
     expect(screen.getByRole('link', { name: /PDF/i })).toBeInTheDocument();
   });
 
-  test('skills are grouped and include the GNN / EHT stack', () => {
-    renderApp();
-    ['Deep Learning & ML', 'Languages', 'Tools'].forEach((t) => expect(screen.getByText(t)).toBeInTheDocument());
-    ['PyTorch Geometric', 'PyTorch Lightning', 'eht-imaging', 'Astropy'].forEach((t) => expect(screen.getByText(t)).toBeInTheDocument());
-  });
-
-  test('HPC group is shown, the MLOps group is not (yet)', () => {
-    renderApp();
-    expect(screen.getByText('HPC & GPU Computing')).toBeInTheDocument();
-    ['CUDA', 'Slurm', 'PyTorch DDP', 'Multi-GPU Training', 'Linux / Bash', 'TensorBoard'].forEach((t) =>
+  test('skills are plain grouped chips with no scores or sizes', () => {
+    const { container } = renderApp();
+    ['Languages', 'Deep Learning Frameworks', 'HPC & Systems', 'Scientific Computing', 'Models & Methods'].forEach((t) =>
       expect(screen.getByText(t)).toBeInTheDocument()
     );
+    ['PyTorch Geometric', 'PyTorch Lightning', 'eht-imaging', 'Astropy', 'CUDA', 'Slurm', 'PyTorch DDP', 'Docker', 'Weights & Biases', 'JAX', 'Hugging Face', 'GNNs'].forEach((t) =>
+      expect(screen.getByText(t)).toBeInTheDocument()
+    );
+    expect(container.querySelectorAll('.skill-row')).toHaveLength(5);
+    expect(container.querySelector('.bubble-chart')).toBeNull();
+    expect(container.querySelector('#skills')).not.toHaveTextContent(/\/10/);
+    ['C#', 'Anaconda', 'Pillow', 'Visual Studio Code', 'Self-supervised Learning', 'Transformers'].forEach((t) =>
+      expect(screen.queryByText(t)).toBeNull()
+    );
     expect(screen.queryByText('MLOps & Engineering')).toBeNull();
-    expect(screen.queryByText('NetworkX')).toBeNull();
   });
 });
 
@@ -174,7 +175,7 @@ describe('timeline', () => {
 
   test('shows the journey strip', () => {
     const { container } = renderApp();
-    expect(container.querySelectorAll('.journey-stop')).toHaveLength(5);
+    expect(container.querySelectorAll('.journey-stop')).toHaveLength(6);
   });
 
   test('detail toggle exposes its state for assistive tech', () => {
@@ -183,6 +184,20 @@ describe('timeline', () => {
     expect(toggle).toHaveAttribute('aria-expanded', 'false');
     fireEvent.click(toggle);
     expect(screen.getByRole('button', { name: /Hide details: Doctor of Philosophy/i })).toHaveAttribute('aria-expanded', 'true');
+  });
+});
+
+describe('timeline details', () => {
+  test('every entry shows its subtitle and keeps the detail behind the + button', () => {
+    const { container } = renderApp();
+    const items = container.querySelectorAll('.tl-item');
+    expect(items.length).toBe(11);
+    items.forEach((li) => {
+      expect(li.querySelector('.tl-subtitle')).not.toBeNull();
+      expect(li.querySelector('.tl-toggle')).not.toBeNull();
+      expect(li).not.toHaveClass('open');
+    });
+    expect(container.querySelector('.tl-more-link')).toBeNull();
   });
 });
 

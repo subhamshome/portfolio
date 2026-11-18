@@ -139,10 +139,20 @@
 }
 
 .hero-affiliation {
-    max-width: 52ch;
+    max-width: 72ch;
     font-size: 0.95rem;
     line-height: 1.7;
     color: #b4adbf;
+}
+
+.hero-affil-line {
+    display: block;
+}
+
+@media (min-width: 900px) {
+    .hero-affil-line {
+        white-space: nowrap;
+    }
 }
 
 .academic-hero {
