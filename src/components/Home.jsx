@@ -43,7 +43,8 @@ const Home = () => {
                         <h1>Subham SHOME</h1>
                         <p className='hero-pitch'>Physics-guided deep learning for VLBI image reconstruction and inverse problems</p>
                         <div className='hero-affiliation'>
-                                PhD, BASP Lab, Heriot-Watt University, Edinburgh (expected Feb 2028) &nbsp;|&nbsp; Erasmus Mundus MSc, IPCV
+                                <span className='hero-affil-line'>PhD, BASP Lab, Heriot-Watt University, Edinburgh (expected Feb 2028)</span>
+                                <span className='hero-affil-line'>Event Horizon Telescope (EHT) Collaborator &nbsp;|&nbsp; Erasmus Mundus MS, IPCV</span>
                                 <div className='academic-hero'>
                                         <AcademicBar />
                                 </div>
@@ -73,18 +74,16 @@ const Home = () => {
                 </div>
                 <h3>Research Interests</h3>
                 <div className='research-card-section'>
-                        <ResearchCard title="Image Reconstruction" />
-                        <ResearchCard title="Radio Astronomy" />
+                        <ResearchCard title="Computational Imaging" />
                         <ResearchCard title="Inverse Problems" />
-                        <ResearchCard title="Astroinformatics" />
-                        <ResearchCard title="Applied Mathematics" />
-                        <ResearchCard title="Tomographic Imaging" />
-                        <ResearchCard title="Deep Learning" />
-                        <ResearchCard title="Computer Vision" />
-                        <ResearchCard title="Radio Interferometry" />
-                        <ResearchCard title="VLBI / EHT Data" />
-                        <ResearchCard title="Interferometric Calibration" />
+                        <ResearchCard title="Physics-Guided Deep Learning" />
+                        <ResearchCard title="Scientific Machine Learning" />
+                        <ResearchCard title="Radio Interferometry (VLBI / EHT)" />
+                        <ResearchCard title="Black Hole Imaging" />
+                        <ResearchCard title="Uncertainty Quantification" />
                         <ResearchCard title="Graph Neural Networks" />
+                        <ResearchCard title="Signal Processing" />
+                        <ResearchCard title="Large-Scale Model Training" />
                 </div>
         </section>
 

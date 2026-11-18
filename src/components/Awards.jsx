@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/awards.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMedal, faAward, faTrophy, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
+import { faMedal, faAward, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 
 // Newest first. `color` is the accent of the card's icon and top border.
 const awards = [
@@ -18,13 +18,6 @@ const awards = [
     icon: faAward,
     color: 'var(--violet)',
     text: 'Selected among Synapse AI Symposium’s top 50 candidates at Milan, alongside global AI luminaries.',
-  },
-  {
-    title: 'Winner - Cybathlon 2023-24',
-    date: 'April 2023',
-    icon: faTrophy,
-    color: 'var(--highlight)',
-    text: 'Secured Cybathlon 2023-24’s Vision Assistance Challenge victory among 21 global teams at ETH Zurich.',
   },
   {
     title: 'Erasmus+ Grant',
