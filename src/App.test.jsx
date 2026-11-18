@@ -32,11 +32,11 @@ describe('portfolio page', () => {
     blank.forEach((a) => expect(a.getAttribute('rel')).toMatch(/noopener/));
   });
 
-  test('uses the work email and no retired contact details', () => {
+  test('uses the personal email and no retired contact details', () => {
     const { container } = renderApp();
     const mailto = Array.from(container.querySelectorAll('a[href^="mailto:"]')).map((a) => a.getAttribute('href'));
     expect(mailto.length).toBeGreaterThan(0);
-    mailto.forEach((m) => expect(m).toBe('mailto:ss3038@hw.ac.uk'));
+    mailto.forEach((m) => expect(m).toBe('mailto:subhamshome.dev@gmail.com'));
     expect(container.innerHTML).not.toMatch(/u-bordeaux/);
     expect(container.innerHTML).not.toMatch(/facebook\.com|instagram\.com/);
   });
@@ -76,7 +76,7 @@ describe('footer', () => {
     expect(targets.length).toBeGreaterThanOrEqual(6);
     targets.forEach((id) => expect(container.querySelector(`#${id}`)).not.toBeNull());
     expect(within(footer).getByRole('link', { name: /CV/ })).toHaveAttribute('href', expect.stringMatching(/Subham_Shome_CV\.pdf$/));
-    expect(within(footer).queryByText('ss3038@hw.ac.uk')).toBeNull();
+    expect(within(footer).queryByText('subhamshome.dev@gmail.com')).toBeNull();
     expect(footer).not.toHaveTextContent(/Built with React/i);
     expect(screen.queryByRole('button', { name: /theme/i, hidden: true })).toBeNull();
     expect(within(footer).getByRole('link', { name: /Source on GitHub/i })).toHaveAttribute('href', 'https://github.com/subhamshome/portfolio');
@@ -129,15 +129,41 @@ describe('content', () => {
 });
 
 describe('timeline', () => {
-  test('lists every entry newest first, with the new TCS title', () => {
+  test('splits the journey into Experience, Education and Internships, all visible', () => {
     const { container } = renderApp();
-    const items = container.querySelectorAll('.tl-item');
-    expect(items).toHaveLength(10);
-    expect(items[0]).toHaveTextContent(/PhD/);
-    expect(items[items.length - 1]).toHaveTextContent(/Amity/);
-    expect(screen.getByText('Software Developer at TCS')).toBeInTheDocument();
+    const titles = Array.from(container.querySelectorAll('.tl-section-title')).map((h) => h.textContent);
+    expect(titles).toEqual(['Experience', 'Education', 'Internships']);
+    const counts = Array.from(container.querySelectorAll('.tl-section')).map((sec) => sec.querySelectorAll('.tl-item').length);
+    expect(counts).toEqual([3, 5, 3]);
+    const [work, studies, internships] = Array.from(container.querySelectorAll('.tl-section'));
+    expect(studies.querySelector('.tl-item')).toHaveTextContent(/PhD/);
+    expect(studies).not.toHaveTextContent(/Teaching Assistant|EHTC/);
+    const studyItems = studies.querySelectorAll('.tl-item');
+    expect(studyItems[studyItems.length - 1]).toHaveTextContent(/Amity/);
+    expect(internships).toHaveTextContent(/ISI/);
+    expect(internships.querySelector('.tl-item')).toHaveTextContent(/Thesis at IMS/);
+    expect(studies).not.toHaveTextContent(/IMS/);
+    expect(work).toHaveTextContent(/Teaching Assistant/);
+    expect(work).toHaveTextContent(/EHTC Collaborator/);
+    expect(work).toHaveTextContent(/Software Developer at TCS/);
     expect(screen.queryByText(/resignation/i)).toBeNull();
     expect(screen.queryByText(/preparedness/i)).toBeNull();
+    expect(screen.queryByText(/Excellence Scholarship at IPCV/)).toBeNull();
+  });
+
+  test('groups entries into PhD, Master\'s and Bachelor\'s frames', () => {
+    const { container } = renderApp();
+    const frames = Array.from(container.querySelectorAll('.tl-phase'));
+    const byLabel = (re) => frames.filter((f) => re.test(f.querySelector('.tl-phase-label').textContent));
+    const masters = byLabel(/Master/);
+    expect(masters.map((f) => f.querySelectorAll('.tl-item').length).sort()).toEqual([2, 3]);
+    expect(masters.some((f) => /Thesis at IMS/.test(f.textContent) && /Winter Internship at ISI/.test(f.textContent))).toBe(true);
+    const bachelors = byLabel(/Bachelor/);
+    expect(bachelors.some((f) => /Amity/.test(f.textContent))).toBe(true);
+    expect(bachelors.some((f) => /First Glimpse of Computer Vision at ISI/.test(f.textContent))).toBe(true);
+    expect(byLabel(/Industry/).some((f) => /Software Developer at TCS/.test(f.textContent))).toBe(true);
+    const phd = byLabel(/PhD/);
+    expect(phd.some((f) => /Teaching Assistant/.test(f.textContent) && /EHTC/.test(f.textContent))).toBe(true);
   });
 
   test('both ISI internships are kept as separate entries', () => {
@@ -146,11 +172,9 @@ describe('timeline', () => {
     expect(screen.getByText(/Deep Learning Winter Internship at ISI/)).toBeInTheDocument();
   });
 
-  test('shows the journey strip and the three tracks', () => {
+  test('shows the journey strip', () => {
     const { container } = renderApp();
     expect(container.querySelectorAll('.journey-stop')).toHaveLength(5);
-    const legend = Array.from(container.querySelectorAll('.tl-legend li')).map((li) => li.textContent.trim());
-    expect(legend).toEqual(['Research', 'Education', 'Industry']);
   });
 
   test('detail toggle exposes its state for assistive tech', () => {

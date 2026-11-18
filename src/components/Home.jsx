@@ -20,7 +20,7 @@ const Home = () => {
 
         const introSummary = (
                 <>
-                        <p>I'm a <b>PhD</b> researcher at the <b>Biomedical and Astronomical Signal Processing (BASP) Laboratory, Heriot-Watt University</b> in Edinburgh, working on physics-based image reconstruction for radio astronomy, including imaging black holes. I came to research from three years as a software developer at TCS, then a triple Master's in Image Processing and Computer Vision across Hungary, Spain and France (4.51/5, second in my batch). I like applied maths, inverse problems and fast, GPU-accelerated code.</p>
+                        <p>I'm a <b>PhD</b> researcher at the <b>Biomedical and Astronomical Signal Processing (BASP) Laboratory, Heriot-Watt University</b> in Edinburgh, a collaborator in the <b>Event Horizon Telescope Collaboration (EHTC)</b>, working on physics-guided image reconstruction and calibration for radio astronomy, including imaging black holes. I came to research from three years as a software developer at TCS, then a triple Master's in Image Processing and Computer Vision across Hungary, Spain and France (4.51/5, second in my batch). I like applied maths, inverse problems and fast, GPU-accelerated code.</p>
                 </>
         );
 

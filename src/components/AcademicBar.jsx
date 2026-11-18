@@ -13,7 +13,7 @@ import '../styles/academicbar.css';
 const AcademicBar = () => {
   return (
     <div className="academic-bar">
-      <a href="mailto:ss3038@hw.ac.uk" aria-label="Email" className='academic-email'>
+      <a href="mailto:subhamshome.dev@gmail.com" aria-label="Email" className='academic-email'>
         <FontAwesomeIcon icon={faEnvelope} />
       </a>
       <a href="https://linkedin.com/in/subhamshome" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className='linkedin'>

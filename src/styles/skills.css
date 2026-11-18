@@ -62,38 +62,12 @@
     overflow-wrap: break-word;
 }
 
-.bubble-score {
-    position: absolute;
-    bottom: 13%;
-    left: 0;
-    right: 0;
-    font-family: var(--mono);
-    font-size: 0.78em;
-    color: var(--group-text);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
 .bubble:hover,
 .bubble:focus-visible {
     z-index: 2;
     transform: scale(1.07);
     border-color: var(--group-text);
     box-shadow: 0 0 0 1px var(--group-text), 0 0 32px color-mix(in srgb, var(--group-text) 35%, transparent);
-}
-
-.bubble:hover .bubble-name,
-.bubble:focus-visible .bubble-name {
-    transform: translateY(-0.45em);
-}
-
-.bubble:hover .bubble-score,
-.bubble:focus-visible .bubble-score {
-    opacity: 1;
-}
-
-.bubble-name {
-    transition: transform 0.2s ease;
 }
 
 /* fade the others while one is explored */

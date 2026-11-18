@@ -15,7 +15,7 @@ const Contact = () => {
                         <FontAwesomeIcon icon={faLocationDot} /><p>Edinburgh, Scotland, UK</p>
                      </div>
                      <div className='contact-item'>
-                        <FontAwesomeIcon icon={faEnvelope} /><a href="mailto:ss3038@hw.ac.uk" className="contact-links"><p>ss3038@hw.ac.uk</p></a>
+                        <FontAwesomeIcon icon={faEnvelope} /><a href="mailto:subhamshome.dev@gmail.com" className="contact-links"><p>subhamshome.dev@gmail.com</p></a>
                      </div>
                      <div className='contact-item'>
                         <FontAwesomeIcon icon={faMedium} /><a href="https://subhamshome.medium.com" target="_blank" rel="noopener noreferrer" className="contact-links"><p>Personal Blog</p></a>
