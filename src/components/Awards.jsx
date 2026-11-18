@@ -34,6 +34,13 @@ const awards = [
     text: 'Chosen along with 9 applicants to receive the prestigious Erasmus+ Grant as funding for studies in Europe.',
   },
   {
+    title: 'IPCV Dean’s Scholarship',
+    date: 'November 2022',
+    icon: faUserGraduate,
+    color: 'var(--teal)',
+    text: 'Awarded the Dean’s Scholarship by Pazmany Peter Catholic University, Budapest, for the IPCV Master’s programme.',
+  },
+  {
     title: 'IPCV Excellence Scholarship - 100%',
     date: 'April 2022',
     icon: faUserGraduate,
@@ -49,6 +56,14 @@ const awards = [
   },
 ];
 
+// Leadership, certifications and languages (from the CV).
+const extras = [
+  { title: 'International Student Advisor, IPCV Master’s programme', date: '2022 – 2024', text: 'Leadership role in the Erasmus Mundus IPCV Master’s programme.' },
+  { title: 'Deep Learning: Perceptrons to Diffusion Models', date: 'March 2023', text: 'Certificate course at the Indian Statistical Institute, Kolkata.' },
+  { title: 'Mathematics for Machine Learning', date: 'May 2022', text: 'Certificate course by Imperial College London.' },
+  { title: 'Spoken languages', date: 'Fluency', text: 'English (IELTS 8.0, March 2024), Bengali (native), Hindi.' },
+];
+
 const Awards = () => (
   <div className="awards-div-main">
     <div className="awards-grid">
@@ -57,6 +72,19 @@ const Awards = () => (
           <div className="award-icon" aria-hidden="true">
             <FontAwesomeIcon icon={icon} />
           </div>
+          <div className="award-body">
+            <h4 className="award-title">{title}</h4>
+            <span className="award-date">{date}</span>
+            <p className="award-text">{text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <h3 className="awards-subhead">Leadership, certifications and languages</h3>
+    <div className="awards-grid">
+      {extras.map(({ title, date, text }) => (
+        <article className="award-card" key={title}>
           <div className="award-body">
             <h4 className="award-title">{title}</h4>
             <span className="award-date">{date}</span>

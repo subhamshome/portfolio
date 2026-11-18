@@ -40,6 +40,6 @@ Deployed on Vercel from the `master` branch; every push to `master` updates prod
 
 ## Contact
 
-Email: ss3038@hw.ac.uk · GitHub: https://github.com/subhamshome
+Email: subhamshome.dev@gmail.com · GitHub: https://github.com/subhamshome
 
 If you use this as a template, please credit this repository.

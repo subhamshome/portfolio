@@ -72,3 +72,10 @@
     .award-title { grid-row: 1; }
     .award-text { grid-row: 3; }
 }
+
+.awards-subhead {
+    margin: 56px 0 18px;
+    font-size: 1.1rem;
+    color: var(--muted);
+    font-weight: 500;
+}

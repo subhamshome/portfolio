@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { packCircles } from './bubblePack';
-import anaconda from '../assets/skills/anaconda.png';
 import astropy from '../assets/skills/astropy.png';
 import colab from '../assets/skills/colab.png';
 import cpp from '../assets/skills/cpp.png';
@@ -14,13 +13,11 @@ import sql from '../assets/skills/mssql.png';
 import numpy from '../assets/skills/numpy.png';
 import opencv from '../assets/skills/opencv.png';
 import pandas from '../assets/skills/pandas.png';
-import pillow from '../assets/skills/pillow.png';
 import python from '../assets/skills/python.png';
 import pytorch from '../assets/skills/pytorch.png';
 import skimage from '../assets/skills/skimage.png';
 import sklearn from '../assets/skills/sklearn.png';
 import tensorflow from '../assets/skills/tensorflow.png';
-import tex from '../assets/skills/tex.png';
 import vscode from '../assets/skills/vscode.png';
 import '../styles/skills.css';
 
@@ -34,12 +31,19 @@ const SCORES = {
     'PyTorch Lightning': 8,
     'TensorFlow': 7,
     'Keras': 7,
+    'JAX': 6,
+    'Hugging Face': 7,
     'Scikit-Learn': 8,
     'CUDA': 8,
     'Multi-GPU Training': 8,
     'PyTorch DDP': 6,
     'Slurm': 7,
+    'Docker': 6,
+    'Weights & Biases': 7,
     'Linux / Bash': 7,
+    'Vision Transformers': 7,
+    'LLMs': 6,
+    'GNNs': 7,
     'NumPy': 10,
     'SciPy': 9,
     'Pandas': 8,
@@ -48,18 +52,14 @@ const SCORES = {
     'eht-imaging': 7,
     'OpenCV': 7,
     'Scikit-Image': 6,
-    'Pillow': 4,
     'Python': 10,
     'MATLAB': 5,
     'C++': 6,
     'SQL (MS-SQL)': 5,
     'JavaScript / React': 4,
-    'C#': 3,
-    'TeX': 7,
     'Git': 9,
     'LaTeX': 8,
     'Jupyter Notebooks': 10,
-    'Anaconda': 3,
     'Visual Studio Code': 10,
     'Google Colab': 9,
     'TensorBoard': 8,
@@ -80,8 +80,6 @@ const groups = [
             skill('C++', cpp),
             skill('SQL (MS-SQL)', sql),
             skill('JavaScript / React', null, 'JS'),
-            skill('C#', null, 'C#'),
-            skill('TeX', tex),
         ],
     },
     {
@@ -94,6 +92,8 @@ const groups = [
             skill('PyTorch Lightning', null, 'PL'),
             skill('TensorFlow', tensorflow),
             skill('Keras', keras),
+            skill('JAX', null, 'JAX'),
+            skill('Hugging Face', null, 'HF'),
             skill('Scikit-Learn', sklearn),
         ],
     },
@@ -106,7 +106,19 @@ const groups = [
             skill('Multi-GPU Training', null, 'GPU'),
             skill('PyTorch DDP', null, 'DDP'),
             skill('Slurm', null, 'SL'),
+            skill('Docker', null, 'Dk'),
+            skill('Weights & Biases', null, 'W&B'),
             skill('Linux / Bash', null, 'sh'),
+        ],
+    },
+    {
+        title: 'Models & Methods',
+        color: 'var(--accent)',
+        text: 'var(--accent-t)',
+        skills: [
+            skill('Vision Transformers', null, 'ViT'),
+            skill('LLMs', null, 'LLM'),
+            skill('GNNs', null, 'GNN'),
         ],
     },
     // MLOps & Engineering: uncomment this group when these skills are ready to show.
@@ -115,7 +127,6 @@ const groups = [
     //     color: 'var(--teal)',
     //     text: 'var(--teal-t)',
     //     skills: [
-    //         skill('Docker', null, 'Dk'),
     //         skill('MLflow', null, 'ML'),
     //         skill('GitHub Actions', null, 'CI'),
     //         skill('pytest', null, 'pt'),
@@ -134,7 +145,6 @@ const groups = [
             skill('eht-imaging', null, 'ehtim'),
             skill('OpenCV', opencv),
             skill('Scikit-Image', skimage),
-            skill('Pillow', pillow),
         ],
     },
     {
@@ -145,7 +155,6 @@ const groups = [
             skill('Git', git),
             skill('LaTeX', latex),
             skill('Jupyter Notebooks', jupyter),
-            skill('Anaconda', anaconda),
             skill('Visual Studio Code', vscode),
             skill('Google Colab', colab),
             skill('TensorBoard', null, 'TB'),
@@ -278,7 +287,7 @@ const Cluster = ({ layout, showTitles }) => {
                     className="bubble"
                     role="img"
                     tabIndex={0}
-                    aria-label={`${sk.name}, ${sk.score} out of 10`}
+                    aria-label={sk.name}
                     style={{
                         left: pct(x - r - minX, width),
                         top: pct(y - r - minY, height),
@@ -291,7 +300,6 @@ const Cluster = ({ layout, showTitles }) => {
                     }}
                 >
                     <span className="bubble-name">{sk.name}</span>
-                    <span className="bubble-score" aria-hidden="true">{sk.score}/10</span>
                 </div>
             ))}
         </div>

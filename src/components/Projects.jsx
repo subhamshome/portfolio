@@ -21,7 +21,8 @@ const Projects = () => {
         image: masters,
         buttonLabel: "GitHub",
         buttonLink: "https://github.com/subhamshome/ipcv-masters-thesis",
-        tags: ['MATLAB','Tomography','Inverse Problems','Parameter Learning']
+        tags: ['MATLAB','Tomography','Inverse Problems','Parameter Learning'],
+        result: 'Huber penalty cut MSE by 72% vs re-gridding (PSNR +5.5 dB)'
         },
         {
         title: "Optic disc segmentation in Drishti-GS dataset",
@@ -39,7 +40,7 @@ const Projects = () => {
         buttonLabel: "GitHub",
         buttonLink: "https://github.com/subhamshome/sloan-digital-sky-survey-sdss-dr14-ml",
         tags: ['Python','scikit-learn','XGBoost'],
-        result: '99.4% accuracy with XGBoost'
+        result: '99.4% accuracy with XGBoost, 99.1% with random forest'
         },
         {
         title: "Deepfake Detection",
