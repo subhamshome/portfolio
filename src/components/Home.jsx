@@ -20,14 +20,14 @@ const Home = () => {
 
         const introSummary = (
                 <>
-                        <p>I'm a <b>PhD</b> researcher at the <b>Biomedical and Astronomical Signal Processing (BASP) Laboratory, Heriot-Watt University</b> in Edinburgh, a collaborator in the <b>Event Horizon Telescope Collaboration (EHTC)</b>, working on physics-guided image reconstruction and calibration for radio astronomy, including imaging black holes. I came to research from three years as a software developer at TCS, then a triple Master's in Image Processing and Computer Vision across Hungary, Spain and France (4.51/5, second in my batch). I like applied maths, inverse problems and fast, GPU-accelerated code.</p>
+                        <p>I'm a <b>PhD</b> researcher at the <b>Biomedical and Astronomical Signal Processing (BASP) Laboratory, Heriot-Watt University</b> in Edinburgh, a collaborator in the <b>Event Horizon Telescope Collaboration (EHTC)</b>, working on physics-guided image reconstruction and calibration for radio astronomy, including imaging black holes. I came to research from three years as a software developer at TCS, then a triple Master's in Image Processing and Computer Vision across Hungary, Spain and France. I like applied maths, inverse problems and fast, GPU-accelerated code.</p>
                 </>
         );
 
         const introMore = (
                 <>
                         <p>My academic journey began with a Bachelor of Technology degree from Amity University in Kolkata, India, in 2019, where I was honored as the Silver Medalist in Electronics and Communication Engineering. My undergraduate thesis was a medical imaging project in image processing and deep learning that earned "<i>extraordinary</i>" remarks, building on a summer internship at the Indian Statistical Institute.</p>
-                        <p>At TCS (June 2019 to August 2022) I mainly worked on frontend development with React JS, with some SQL database management and .NET backend work in C#. I then moved into research through the IPCV Master's, studying on a 100% Excellence Scholarship and interning at <b>IMS Bordeaux</b> on "<i>Parameter Learning in Tomography</i>". Outside research, I am fascinated by Astronomy and Cosmology.</p>
+                        <p>At TCS (June 2019 to August 2022) I mainly worked on frontend development with React JS, with some SQL database management and .NET backend work in C#. I then moved into research through the IPCV Master's, studying on a 100% Excellence Scholarship and interning at <b>IMS Bordeaux</b> on "<i>Wiener and Huber tomographic reconstruction</i>". Outside research, I am fascinated by Astronomy and Cosmology.</p>
                 </>
         );
 
@@ -44,7 +44,8 @@ const Home = () => {
                         <p className='hero-pitch'>Physics-guided deep learning for VLBI image reconstruction and inverse problems</p>
                         <div className='hero-affiliation'>
                                 <span className='hero-affil-line'>PhD, BASP Lab, Heriot-Watt University, Edinburgh (expected Feb 2028)</span>
-                                <span className='hero-affil-line'>Event Horizon Telescope (EHT) Collaborator &nbsp;|&nbsp; Erasmus Mundus MS, IPCV</span>
+                                <span className='hero-affil-line'>Event Horizon Telescope (EHT) Collaborator</span>
+                                <span className='hero-affil-line'>Erasmus Mundus MS, IPCV</span>
                                 <div className='academic-hero'>
                                         <AcademicBar />
                                 </div>
@@ -97,16 +98,16 @@ const Home = () => {
                 <Timeline />
         </section>
 
+        <section id='publications' className='sections-home publications-section'>
+                <h1 className='home-headers'>Publications</h1>
+                <Publications />
+        </section>
+
         <section id='projects' className='sections-home projects-section'>
                 <h1 className='home-headers'>Research Projects</h1>
                 <div className='projects-main'>
                         <Projects />
                 </div>
-        </section>
-
-        <section id='publications' className='sections-home publications-section'>
-                <h1 className='home-headers'>Publications</h1>
-                <Publications />
         </section>
 
         <section id='awards' className='sections-home awards-main'>

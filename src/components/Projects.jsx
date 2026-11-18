@@ -14,14 +14,15 @@ import signature from '../assets/projects/signature.jpg';
 
 
 const Projects = () => {
+    // Strongest first: the first three show by default, the rest sit behind "Show all".
     const projectsData = [
         {
-        title: "Parameter Learning in Tomography",
-        description: "This is my masters thesis project on tomographic imaging and parameter learning using the famous Shepp-Logan phantom.",
+        title: "Wiener vs Huber Tomographic Reconstruction",
+        description: "This project compares the performance of Wiener and Huber penalty based tomographic reconstruction on simulated data, with a focus on tuning the Huber penalty parameters through a parameter sweep",
         image: masters,
         buttonLabel: "GitHub",
         buttonLink: "https://github.com/subhamshome/ipcv-masters-thesis",
-        tags: ['MATLAB','Tomography','Inverse Problems','Parameter Learning'],
+        tags: ['MATLAB','Tomography','Inverse Problems','Parameter Tuning'],
         result: 'Huber penalty cut MSE by 72% vs re-gridding (PSNR +5.5 dB)'
         },
         {
@@ -52,12 +53,30 @@ const Projects = () => {
         result: '97% test accuracy'
         },
         {
+        title: "Multiclass Weather Classification",
+        description: "Comparative analysis of ML and DL algorithms on the popular Multi-class Weather Dataset (MWD) for multi-class weather classification",
+        image: mwd, 
+        buttonLabel: "GitHub",
+        buttonLink: "https://github.com/subhamshome/multiclass-classification-weather-mwd",
+        tags: ['Python','TensorFlow','scikit-learn'],
+        result: '92.4% test accuracy (CNN) vs 85.8% (Random Forest)'
+        },
+        {
         title: "ESA Hubble Dataset Creator",
         description: "Creating the publicly available dataset from images taken by the Hubble Space telescope, by scraping from ESA's website",
         image: hubble, 
         buttonLabel: "GitHub",
         buttonLink: "https://github.com/subhamshome/esa-hubble-dataset-creator",
         tags: ['Python','Web Scraping','BeautifulSoup']
+        },
+        {
+        title: "Scania Trucks - Air Pressure Failure Prediction",
+        description: "A classical machine learning algorithm based binary classification on the famous Scania APS dataset",
+        image: scania, 
+        buttonLabel: "GitHub",
+        buttonLink: "https://github.com/subhamshome/scania-aps-fail-pred-ml",
+        tags: ['Python','XGBoost','scikit-learn'],
+        result: 'F1 up to 0.97 on a balanced validation set'
         },
         {
         title: "Signature Recognition",
@@ -75,24 +94,6 @@ const Projects = () => {
         buttonLink: "https://github.com/subhamshome/murmur-classification",
         tags: ['MATLAB','SVM','Signal Processing']
         },
-        {
-        title: "Scania Trucks - Air Pressure Failure Prediction",
-        description: "A classical machine learning algorithm based binary classification on the famous Scania APS dataset",
-        image: scania, 
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/scania-aps-fail-pred-ml",
-        tags: ['Python','XGBoost','scikit-learn'],
-        result: 'F1 up to 0.97 on a balanced validation set'
-        },
-        {
-        title: "Multiclass Weather Classification",
-        description: "Comparative analysis of ML and DL algorithms on the popular Multi-class Weather Dataset (MWD) for multi-class weather classification",
-        image: mwd, 
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/multiclass-classification-weather-mwd",
-        tags: ['Python','TensorFlow','scikit-learn'],
-        result: '92.4% test accuracy (CNN) vs 85.8% (Random Forest)'
-        },        
     ];
       
     const [visibleProjects, setVisibleProjects] = useState(3);

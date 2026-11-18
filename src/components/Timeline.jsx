@@ -44,15 +44,6 @@ const sections = [
     intro: 'Research and teaching at Heriot-Watt, and three years of software engineering at TCS.',
     entries: [
       {
-        title: 'Teaching Assistant at HWU',
-        phase: 'phd',
-        subtitle: 'Teaching Assistant for Deep Learning and Optimization at Heriot-Watt University',
-        detail: 'Supporting labs and tutorials and marking coursework for 15–20 students per year over three years',
-        date: 'Sep 2025 – Dec 2027',
-        place: 'Edinburgh, UK',
-        logo: hwu,
-      },
-      {
         title: 'PhD Researcher and EHTC Collaborator at HWU',
         phase: 'phd',
         subtitle: 'Collaborator in the Event Horizon Telescope Collaboration (EHTC), at the BASP Laboratory, Heriot-Watt University',
@@ -62,10 +53,19 @@ const sections = [
         logo: hwu,
       },
       {
+        title: 'Teaching Assistant at HWU',
+        phase: 'phd',
+        subtitle: 'Teaching Assistant for Deep Learning and Optimization at Heriot-Watt University',
+        detail: 'Supporting labs and tutorials and marking coursework for 15–20 students per year over three years',
+        date: 'Sep 2025 – Present',
+        place: 'Edinburgh, UK',
+        logo: hwu,
+      },
+      {
         title: 'Software Developer at TCS',
         phase: 'industry',
         subtitle: 'Started my career at TCS as an Assistant Systems Engineer trainee',
-        detail: 'Automated 20% of Walmart’s monitoring system (30%+ weekly efficiency gain) and cut ASDA.com bugs by 15%, through full-stack development with the MERN stack, plus SQL databases and some .NET (C#) backend work',
+        detail: 'Automated 20% of Walmart’s monitoring system (30%+ weekly efficiency gain) and cut ASDA.com bugs by 15%, through full-stack development with MERN stack and SQL databases.',
         date: 'Jun 2019 – Aug 2022',
         place: 'Kolkata, India',
         logo: tcs,
@@ -75,13 +75,13 @@ const sections = [
   {
     id: 'education',
     label: 'Education',
-    intro: 'Degrees and scholarships, from B.Tech in Kolkata to a PhD in Edinburgh.',
+    intro: 'From Bachelors till PhD, across India, Hungary, Spain, France and the UK.',
     entries: [
       {
         title: 'Doctor of Philosophy (PhD) at HWU',
         phase: 'phd',
         subtitle: 'PhD in Computational Imaging (Radio Astronomy) at the BASP Laboratory, Heriot-Watt University, UK',
-        detail: 'Working on physically guided deep radio-interferometric image reconstruction and calibration with deep learning, for VLBI black hole imaging',
+        detail: 'Physics-guided deep learning for radio-interferometric imaging and calibration, for VLBI black hole imaging',
         date: 'Sep 2024 – Feb 2028 (expected)', 
         place: 'Edinburgh, UK',
         logo: hwu,
@@ -127,7 +127,7 @@ const sections = [
   {
     id: 'internships',
     label: 'Internships',
-    intro: 'My master’s thesis in Bordeaux and two research internships at the Indian Statistical Institute, Kolkata.',
+    intro: 'My master’s thesis in Bordeaux and two internships at ISI Kolkata.',
     entries: [
       {
         title: 'Master’s Thesis at IMS Bordeaux',
@@ -179,11 +179,13 @@ const TimelineItem = ({ entry }) => {
             aria-label={`${open ? 'Hide' : 'Show'} details: ${entry.title}`}
             onClick={() => setOpen(!open)}
           >
-            {open ? '−' : '+'}
+            <span className="tl-toggle-icon" aria-hidden="true">+</span>
           </button>
         </div>
         <p className="tl-subtitle">{entry.subtitle}</p>
-        <p className="tl-detail">{entry.detail}</p>
+        <div className="tl-detail" aria-hidden={!open}>
+          <p>{entry.detail}</p>
+        </div>
       </div>
     </li>
   );
