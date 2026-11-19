@@ -1,143 +1,70 @@
-import React, { useState }  from 'react';
+import React from 'react';
 import ProjectCard from './ProjectCard';
+import r2d2eht from '../assets/projects/r2d2eht.png';
+// import gnncal from '../assets/projects/gnncal.png';
 import '../styles/projects.css';
 
-import deepfake from '../assets/projects/deepfake.jpg';
-import hubble from '../assets/projects/hubble.jpg';
 import masters from '../assets/projects/masters.png';
-import murmur from '../assets/projects/murmur.jpg';
-import mwd from '../assets/projects/mwd.jpg';
 import opticdisc1 from '../assets/projects/opticdisc1.jpg';
-import scania from '../assets/projects/scania.jpg';
 import sdss from '../assets/projects/sdss.png';
-import signature from '../assets/projects/signature.jpg';
 
 
 const Projects = () => {
-    // Strongest first: the first three show by default, the rest sit behind "Show all".
+    // Current PhD work first, then the strongest earlier projects.
     const projectsData = [
         {
+        title: "R2D2 for event-horizon-scale imaging",
+        description: "Adapting the R2D2 deep neural network series, a learned imaging approach from radio astronomy, to Event Horizon Telescope data. My work covers training data simulation, multi-GPU training and evaluation of the networks.",
+        image: r2d2eht,
+        tags: ['PyTorch','Deep Learning','VLBI','Inverse Problems','Slurm / HPC'],
+        note: 'Ongoing PhD work. Code and results will be shared once they are public.'
+        },
+        // {
+        // title: "Graph Neural Network based calibration of EHT Data",
+        // description: "A graph neural network for calibrating telescope gains in Event Horizon Telescope observations, with stations as nodes and baselines as edges. I am building the full pipeline from data ingestion to calibrated outputs.",
+        // image: gnncal,
+        // tags: ['PyTorch Geometric','GNNs','PyTorch Lightning','VLBI Calibration','Slurm / HPC'],
+        // note: 'Ongoing PhD work. Code and results will be shared once they are public.'
+        // },
+        {
         title: "Wiener vs Huber Tomographic Reconstruction",
-        description: "This project compares the performance of Wiener and Huber penalty based tomographic reconstruction on simulated data, with a focus on tuning the Huber penalty parameters through a parameter sweep",
+        description: "Compared Wiener and Huber-penalty tomographic reconstruction on simulated data; Huber cut MSE by 72% versus re-gridding.",
         image: masters,
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/ipcv-masters-thesis",
+        links: [
+            { label: "GitHub", href: "https://github.com/subhamshome/ipcv-masters-thesis" },
+            { label: "Google Scholar", href: "https://scholar.google.com/citations?user=uU-S0zMAAAAJ&hl=en&inst=16061989973938494330" },
+        ],
         tags: ['MATLAB','Tomography','Inverse Problems','Parameter Tuning'],
         result: 'Huber penalty cut MSE by 72% vs re-gridding (PSNR +5.5 dB)'
         },
         {
         title: "Optic disc segmentation in Drishti-GS dataset",
-        description: "This project deals with the segmentation of optic disc from retinal fundus images from the famous Drishti-GS dataset",
+        description: "A fast, lightweight method for segmenting the optic disc in retinal fundus images, published in the Journal of Neonatal Surgery (2025).",
         image: opticdisc1,
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/optic-disc-segmentation-drishtigs",
+        links: [
+            { label: "GitHub", href: "https://github.com/subhamshome/optic-disc-segmentation-drishtigs" },
+            { label: "Paper (DOI)", href: "https://doi.org/10.63682/jns.v14i15S.3494" },
+        ],
         tags: ['MATLAB','Image Processing','Segmentation'],
         result: 'Dice 93.95% on Drishti-GS (published 2025)'
         },
         {
         title: "Sloan Digital Sky Survey DR14",
-        description: "3-class classification of cosmological objects in the famous SDSS dataset, version DR14",
-        image: sdss, 
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/sloan-digital-sky-survey-sdss-dr14-ml",
+        description: "Classified galaxies, stars and quasars from SDSS DR14 with ensemble methods.",
+        image: sdss,
+        links: [
+            { label: "GitHub", href: "https://github.com/subhamshome/sloan-digital-sky-survey-sdss-dr14-ml" },
+        ],
         tags: ['Python','scikit-learn','XGBoost'],
         result: '99.4% accuracy with XGBoost, 99.1% with random forest'
         },
-        {
-        title: "Deepfake Detection",
-        description: "Detecting deep fake images using various ensemble classifiers",
-        image: deepfake, 
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/deepfake-detection",
-        tags: ['Python','scikit-learn','GLCM / LBP / Gabor features'],
-        result: '97% test accuracy'
-        },
-        {
-        title: "Multiclass Weather Classification",
-        description: "Comparative analysis of ML and DL algorithms on the popular Multi-class Weather Dataset (MWD) for multi-class weather classification",
-        image: mwd, 
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/multiclass-classification-weather-mwd",
-        tags: ['Python','TensorFlow','scikit-learn'],
-        result: '92.4% test accuracy (CNN) vs 85.8% (Random Forest)'
-        },
-        {
-        title: "ESA Hubble Dataset Creator",
-        description: "Creating the publicly available dataset from images taken by the Hubble Space telescope, by scraping from ESA's website",
-        image: hubble, 
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/esa-hubble-dataset-creator",
-        tags: ['Python','Web Scraping','BeautifulSoup']
-        },
-        {
-        title: "Scania Trucks - Air Pressure Failure Prediction",
-        description: "A classical machine learning algorithm based binary classification on the famous Scania APS dataset",
-        image: scania, 
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/scania-aps-fail-pred-ml",
-        tags: ['Python','XGBoost','scikit-learn'],
-        result: 'F1 up to 0.97 on a balanced validation set'
-        },
-        {
-        title: "Signature Recognition",
-        description: "Detecting genuine and forged handwritten signatures using global and local features",
-        image: signature, 
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/signature-recognition",
-        tags: ['MATLAB','Feature Analysis','Verification']
-        },
-        {
-        title: "Heart Murmur Classification",
-        description: "Predicting a heart to be normal or abnormal based on the murmur signal classifications using simple ML algorithms",
-        image: murmur, 
-        buttonLabel: "GitHub",
-        buttonLink: "https://github.com/subhamshome/murmur-classification",
-        tags: ['MATLAB','SVM','Signal Processing']
-        },
     ];
-      
-    const [visibleProjects, setVisibleProjects] = useState(3);
-
-    // const showMoreProjects = () => {
-    //     setVisibleProjects(visibleProjects + 3);
-    // };
-
-    const showLessProjects = () => {
-        setVisibleProjects(3);
-    };
-
-    const showAllProjects = () => {
-        setVisibleProjects(projectsData.length);
-      };
-
 
     return (
-        <div>
-          <div className='project-cards'>
-            {projectsData.slice(0, visibleProjects).map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                tags={project.tags}
-                result={project.result}
-                buttonLabel={project.buttonLabel}
-                buttonLink={project.buttonLink}
-              />
-            ))}
-          </div>
-          <div className='view-buttons'>
-            {visibleProjects < projectsData.length ? (
-              <button onClick={showAllProjects} className="view-more-button">
-                Show All {projectsData.length} projects
-              </button>
-            ) : (
-              <button onClick={showLessProjects} className="view-more-button">
-                Show Less
-              </button>
-            )}
-          </div>
+        <div className='project-cards'>
+          {projectsData.map((project) => (
+            <ProjectCard key={project.title} {...project} />
+          ))}
         </div>
       );
 }

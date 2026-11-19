@@ -11,7 +11,6 @@ import Timeline from "./Timeline";
 import Awards from './Awards';
 import Publications from './Publications';
 import ResearchCard from './ResearchCard';
-import Contact from './Contact';
 
 const resume = `${process.env.PUBLIC_URL}/Subham_Shome_CV.pdf`;
 
@@ -20,14 +19,14 @@ const Home = () => {
 
         const introSummary = (
                 <>
-                        <p>I'm a <b>PhD</b> researcher at the <b>Biomedical and Astronomical Signal Processing (BASP) Laboratory, Heriot-Watt University</b> in Edinburgh, a collaborator in the <b>Event Horizon Telescope Collaboration (EHTC)</b>, working on physics-guided image reconstruction and calibration for radio astronomy, including imaging black holes. I came to research from three years as a software developer at TCS, then a triple Master's in Image Processing and Computer Vision across Hungary, Spain and France. I like applied maths, inverse problems and fast, GPU-accelerated code.</p>
+                        <p>I’m a PhD researcher at the <b>Biomedical and Astronomical Signal Processing (<a href="https://basp.site.hw.ac.uk/" target="_blank" rel="noopener noreferrer">BASP</a>) Laboratory at Heriot-Watt University</b>, supervised by <a href="https://researchportal.hw.ac.uk/en/persons/yves-wiaux/" target="_blank" rel="noopener noreferrer">Prof. Yves Wiaux</a> and <a href="https://researchportal.hw.ac.uk/en/persons/kazunori-akiyama/" target="_blank" rel="noopener noreferrer">Prof. Kazunori Akiyama</a>, and a collaborator in the <b>Event Horizon Telescope Collaboration (<a href="https://eventhorizontelescope.org/" target="_blank" rel="noopener noreferrer">EHTC</a>)</b>. I work on inverse problems and computational imaging, turning sparse, noisy measurements into images, with black hole imaging as my main application.</p>
                 </>
         );
 
         const introMore = (
                 <>
-                        <p>My academic journey began with a Bachelor of Technology degree from Amity University in Kolkata, India, in 2019, where I was honored as the Silver Medalist in Electronics and Communication Engineering. My undergraduate thesis was a medical imaging project in image processing and deep learning that earned "<i>extraordinary</i>" remarks, building on a summer internship at the Indian Statistical Institute.</p>
-                        <p>At TCS (June 2019 to August 2022) I mainly worked on frontend development with React JS, with some SQL database management and .NET backend work in C#. I then moved into research through the IPCV Master's, studying on a 100% Excellence Scholarship and interning at <b>IMS Bordeaux</b> on "<i>Wiener and Huber tomographic reconstruction</i>". Outside research, I am fascinated by Astronomy and Cosmology.</p>
+                        <p>I combine physical models of how the data are measured with deep networks, including reconstruction and calibration models and graph neural networks, trained on multi-GPU HPC clusters, so the reconstructions can be trusted as well as look convincing.</p>
+                        <p>Before research I worked for three years as a software developer at TCS, then completed an <b>Erasmus Mundus MS in Image Processing and Computer Vision (<a href="https://ipcv.eu/" target="_blank" rel="noopener noreferrer">IPCVai</a>)</b> across Hungary, Spain and France. I also teach deep learning as a Teaching Assistant at Heriot-Watt.</p>
                 </>
         );
 
@@ -115,10 +114,6 @@ const Home = () => {
                 <Awards />
         </section>
 
-        <section id='contact' className='sections-home contact-main'>
-                <h1 className='home-headers'>Contact me</h1>
-                <Contact />
-        </section>
     </div>
  );
 };

@@ -1,38 +1,4 @@
 .project-cards {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.view-buttons {
-    padding-top: 36px;
-}
-
-.view-more-button {
-    border: none;
-    border-bottom: 1px solid var(--accent-t);
-    border-radius: 0;
-    background: none;
-    color: var(--accent-t);
-    padding: 2px 0;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.view-more-button:hover {
-    color: var(--accent-dark-t);
-    border-color: var(--accent-dark-t);
-}
-
-@media (min-width: 700px) and (max-width: 1080px) {
-    .project-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 699px) {
-    .project-cards {
-        grid-template-columns: 1fr;
-    }
+    display: flex;
+    flex-direction: column;
 }

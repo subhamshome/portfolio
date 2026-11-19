@@ -1,37 +1,46 @@
 .project-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 28px;
     box-sizing: border-box;
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    text-align: left;
+}
+
+.project-card:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+.project-card:last-child {
+    padding-bottom: 0;
+}
+
+.project-card-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: start;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 6px;
-    background: var(--card);
-    text-align: left;
-    transition: border-color 0.25s ease, transform 0.25s ease;
-}
-
-@media (hover: hover) {
-    .project-card:hover {
-        border-color: var(--accent);
-        transform: translateY(-3px);
-    }
 }
 
 .project-card-image {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    height: 100%;
     object-fit: cover;
     filter: saturate(0.85);
 }
 
 .project-card-content-container {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 20px 22px 22px;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0;
 }
 
 .project-card h4 {
@@ -41,7 +50,7 @@
 }
 
 .project-card p {
-    margin: 10px 0 0;
+    margin: 0;
     font-size: 0.95rem;
     color: var(--muted);
 }
@@ -50,7 +59,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin: 14px 0 0;
 }
 
 .project-card-tag {
@@ -61,14 +69,18 @@
     color: var(--accent-t);
 }
 
-.project-card .project-card-result {
-    font-family: var(--mono);
-    font-size: 0.8rem;
-    color: var(--ink);
+.project-card .project-card-note {
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.project-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
 }
 
 .project-card-button {
-    align-self: flex-start;
     color: var(--accent-t);
     font-weight: 500;
     text-decoration: underline;
@@ -77,4 +89,24 @@
 
 .project-card-button:hover {
     color: var(--accent-dark-t);
+}
+
+.project-card .project-card-result {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--ink);
+}
+
+@media (max-width: 699px) {
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        gap: 20px;
+    }
+
+    .project-card-media {
+        align-self: auto;
+    }
 }

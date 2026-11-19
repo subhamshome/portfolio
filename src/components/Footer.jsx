@@ -1,32 +1,25 @@
 import React from 'react';
-import AcademicBar from './AcademicBar';
 import '../styles/footer.css';
-
-const cv = `${process.env.PUBLIC_URL}/Subham_Shome_CV.pdf`;
-
-const quickLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Publications', href: '#publications' },
-  { label: 'Awards', href: '#awards' },
-  { label: 'Contact', href: '#contact' },
-];
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer id="contact" className="footer">
       <div className="footer-content">
-        <nav className="footer-links" aria-label="Footer">
-          {quickLinks.map(({ label, href }) => (
-            <a key={label} href={href}>{label}</a>
-          ))}
-          <a href={cv} target="_blank" rel="noopener noreferrer">CV</a>
-        </nav>
+        <h2 className="footer-title">Get in touch</h2>
+        {/* <p className="footer-lead">
+          Open to conversations about research, collaboration and interesting problems. The easiest way to reach me is by email.
+        </p> */}
+        <p className="footer-address">
+          <a href="mailto:subhamshome.dev@gmail.com">subhamshome.dev@gmail.com</a>
+          {/* <span aria-hidden="true"> · </span> */}
+          <br />
+          Edinburgh, Scotland, UK
+        </p>
 
-        <div className="footer-contact">
-          <AcademicBar />
-        </div>
+        <p className="footer-social">
+          <a href="https://github.com/subhamshome" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/subhamshome" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
 
         <p className="footer-credit">
           {`\u00a9 ${new Date().getFullYear()} Subham Shome \u00b7 `}

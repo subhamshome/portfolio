@@ -20,32 +20,46 @@
     box-sizing: border-box;
 }
 
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 22px;
+.footer-title {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--ink);
 }
 
-.footer-links a {
+.footer-lead {
+    max-width: 52ch;
+    margin: 0;
     color: var(--muted);
-    font-size: 14px;
+}
+
+.footer-address {
+    margin: 0;
+    color: var(--muted);
+}
+
+.footer-address a {
+    color: var(--accent-t);
     text-decoration: none;
 }
 
-.footer-links a:hover,
-.footer-links a:focus-visible {
-    color: var(--accent-t);
+.footer-address a:hover {
+    color: var(--ink);
 }
 
-.footer-contact {
+.footer-social {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px 24px;
+    gap: 22px;
+    margin: 0;
 }
 
-.footer-contact .academic-bar {
-    margin-left: -10px;
+.footer-social a {
+    color: var(--accent-t);
+    text-decoration: none;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+    color: var(--ink);
 }
 
 .footer-credit {

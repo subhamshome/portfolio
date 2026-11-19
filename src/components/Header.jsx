@@ -45,7 +45,14 @@ const Header = () => {
 
  const handleScrollToSection = (sectionId) => (e) => {
     e.preventDefault();
-  
+
+    // Contact is the footer: go straight to the bottom of the page.
+    if (sectionId === 'contact') {
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     const section = document.getElementById(sectionId);
     if (section) {
       const offset = section.getBoundingClientRect().top;

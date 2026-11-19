@@ -226,6 +226,22 @@
     color: #cfc8c0;
 }
 
+.intro-text-container p a,
+.intro-text-container p a:visited {
+    color: var(--accent-t);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.intro-text-container p a:hover,
+.intro-text-container p a:focus-visible {
+    color: var(--ink);
+}
+
+.intro-text-container p a b {
+    color: inherit;
+}
+
 .intro-text-container p b {
     color: var(--ink);
     font-weight: 600;

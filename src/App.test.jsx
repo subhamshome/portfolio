@@ -69,14 +69,13 @@ describe('portfolio page', () => {
 });
 
 describe('footer', () => {
-  test('has quick links to real sections, and a credit link', () => {
-    const { container } = renderApp();
+  test('shows the email, location and GitHub / LinkedIn text links, and a credit link', () => {
+    renderApp();
     const footer = screen.getByRole('contentinfo');
-    const targets = Array.from(footer.querySelectorAll('.footer-links a[href^="#"]')).map((a) => a.getAttribute('href').slice(1));
-    expect(targets.length).toBeGreaterThanOrEqual(6);
-    targets.forEach((id) => expect(container.querySelector(`#${id}`)).not.toBeNull());
-    expect(within(footer).getByRole('link', { name: /CV/ })).toHaveAttribute('href', expect.stringMatching(/Subham_Shome_CV\.pdf$/));
-    expect(within(footer).queryByText('subhamshome.dev@gmail.com')).toBeNull();
+    expect(within(footer).getByRole('link', { name: 'subhamshome.dev@gmail.com' })).toHaveAttribute('href', 'mailto:subhamshome.dev@gmail.com');
+    expect(footer).toHaveTextContent('Edinburgh, Scotland, UK');
+    expect(within(footer).getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/subhamshome');
+    expect(within(footer).getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://linkedin.com/in/subhamshome');
     expect(footer).not.toHaveTextContent(/Built with React/i);
     expect(screen.queryByRole('button', { name: /theme/i, hidden: true })).toBeNull();
     expect(within(footer).getByRole('link', { name: /Source on GitHub/i })).toHaveAttribute('href', 'https://github.com/subhamshome/portfolio');
@@ -87,27 +86,28 @@ describe('content', () => {
   test('intro "Read more" toggles the long version', () => {
     renderApp();
     const button = screen.getByRole('button', { name: /read more/i });
-    expect(screen.queryByText(/Silver Medalist in Electronics/i)).toBeNull();
+    expect(screen.queryByText(/Before research I worked for three years/i)).toBeNull();
     fireEvent.click(button);
-    expect(screen.getByText(/Silver Medalist in Electronics/i)).toBeInTheDocument();
+    expect(screen.getByText(/Before research I worked for three years/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /show less/i })).toBeInTheDocument();
   });
 
-  test('projects: 3 shown first, all 9 after expanding, each with a GitHub link', () => {
+  test('projects: one card each, GitHub links except the private PhD project', () => {
     const { container } = renderApp();
-    expect(container.querySelectorAll('.project-card')).toHaveLength(3);
-    fireEvent.click(screen.getByRole('button', { name: /show all 9 projects/i }));
-    const cards = container.querySelectorAll('.project-card');
-    expect(cards).toHaveLength(9);
-    cards.forEach((card) =>
-      expect(card.querySelector('a.project-card-button')).toHaveAttribute('href', expect.stringMatching(/^https:\/\/github\.com\/subhamshome\//))
+    const cards = Array.from(container.querySelectorAll('.project-card'));
+    expect(cards).toHaveLength(4);
+    const withLink = cards.filter((card) => card.querySelector('a.project-card-button'));
+    expect(withLink).toHaveLength(3);
+    withLink.forEach((card) =>
+      expect(within(card).getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', expect.stringMatching(/^https:\/\/github\.com\/subhamshome\//))
     );
+    expect(screen.getByText(/R2D2 for event-horizon-scale imaging/)).toBeInTheDocument();
   });
 
   test('publications lists the paper with DOI and PDF links', () => {
     renderApp();
     expect(screen.getByText(/Efficient Algorithm for Optic Disc Segmentation/i)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Paper \(DOI\)/i })).toHaveAttribute('href', expect.stringContaining('doi.org'));
+    screen.getAllByRole('link', { name: /Paper \(DOI\)/i }).forEach((a) => expect(a).toHaveAttribute('href', expect.stringContaining('doi.org')));
     expect(screen.getByRole('link', { name: /^PDF$/i })).toBeInTheDocument();
   });
 
