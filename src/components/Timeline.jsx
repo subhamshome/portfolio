@@ -87,7 +87,7 @@ const sections = [
         logo: hwu,
       },
       {
-        title: 'Master of Science Part 3 at UBx',
+        title: 'Master of Science 3 (Informatics) at UBx',
         phase: 'masters',
         subtitle: "Commenced my third semester of the Master's program at the University of Bordeaux, France",
         detail: 'Delved deeper into applied mathematical approaches to AI and Computer Vision',
@@ -96,7 +96,7 @@ const sections = [
         logo: ubx,
       },
       {
-        title: 'Master of Science Part 2 at UAM',
+        title: 'Master of Science 2 (Computer Vision) at UAM',
         phase: 'masters',
         subtitle: "Began my second semester of the Master's program at the Autonomous University of Madrid, Spain",
         detail: 'Explored various applications and theories behind deep vision models',
@@ -105,7 +105,7 @@ const sections = [
         logo: uam,
       },
       {
-        title: 'Master of Science Part 1 at PPCU',
+        title: 'Master of Science 1 (Computer Science) at PPCU',
         phase: 'masters',
         subtitle: "Embarked on my first semester of the Master's program at Pazmany Peter Catholic University, Budapest, Hungary",
         detail: "First of three semesters across Hungary, Spain and France in the IPCV Master's programme",
